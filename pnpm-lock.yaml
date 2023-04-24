@@ -11,6 +11,7 @@ specifiers:
   framer-motion: ^10.6.0
   react: ^18.2.0
   react-dom: ^18.2.0
+  react-hotkeys-hook: ^4.4.0
   react-router: ^6.10.0
   react-router-dom: ^6.10.0
   rollup-plugin-copy: ^3.4.0
@@ -25,6 +26,7 @@ dependencies:
   framer-motion: 10.6.0_biqbaboplfbrettd7655fr4n2y
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
+  react-hotkeys-hook: 4.4.0_biqbaboplfbrettd7655fr4n2y
   react-router: 6.10.0_react@18.2.0
   react-router-dom: 6.10.0_biqbaboplfbrettd7655fr4n2y
 
@@ -2410,6 +2412,16 @@ packages:
       react-clientside-effect: 1.2.6_react@18.2.0
       use-callback-ref: 1.3.0_pmekkgnqduwlme35zpnqhenc34
       use-sidecar: 1.1.2_pmekkgnqduwlme35zpnqhenc34
+    dev: false
+
+  /react-hotkeys-hook/4.4.0_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-wOaCWLwgT/f895CMJrR9hmzVf+gfL8IpjWDXWXKngBp9i6Xqzf0tvLv4VI8l3Vlsg/cc4C/Iik3Ck76L/Hj0tw==}
+    peerDependencies:
+      react: '>=16.8.1'
+      react-dom: '>=16.8.1'
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
     dev: false
 
   /react-is/16.13.1:

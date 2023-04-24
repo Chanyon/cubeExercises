@@ -5,8 +5,13 @@ function string2FormulaArr(str: string): Array<string> {
 	let temp = "";
 
 	for (let i = 0; i < str.length; i++) {
-		if (str[i + 1] === "'" && i >= 1 && reg.test(str[i])) {
-			temp = `${temp}${str[i]}'`;
+		if (str[i + 1] === "'" && reg.test(str[i])) {
+			temp = `${str[i]}'`;
+			arr.push(temp);
+			temp = "";
+			i += 1;
+		} else if (isDigit(str[i+1]) && reg.test(str[i])) {
+			temp = `${str[i]}${str[i+1]}`;
 			arr.push(temp);
 			temp = "";
 			i += 1;
@@ -18,6 +23,10 @@ function string2FormulaArr(str: string): Array<string> {
 	}
 
 	return arr;
+}
+
+function isDigit(str:string) {
+	return str > '0' && str < '9';
 }
 
 export { string2FormulaArr };
