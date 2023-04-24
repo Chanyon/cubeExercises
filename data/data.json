@@ -1,0 +1,21 @@
+{
+  "three": {
+    "cfop": {
+      "cross": [
+        {
+          "img": "http://img.com/1.jpg",
+          "dl": "R u R' R2 U2'",
+          "hy": "R U R' U'"
+        },
+        {
+          "img": "http://img.com/1.jpg",
+          "dl": "R u R' R2 U2'",
+          "hy": "R U R' U'"
+        }
+      ],
+      "f2l": [],
+      "oll": [],
+      "pll": []
+    }
+  }
+}

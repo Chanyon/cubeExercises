@@ -1,0 +1,51 @@
+{
+  "edge": {},
+  "corners": {
+    "base": [
+      {
+        "encoder": "GM",
+        "commutator": "[U,RUR']",
+        "detailed": "R' D' R U R' D R U'",
+        "block": "Z",
+        "step": "RUR'",
+        "possible": "[]"
+      },
+      {
+        "encoder": "GB",
+        "commutator": "[U,RUR']",
+        "detailed": "URUR'U'RUR",
+        "block": "Z",
+        "step": "RUR'",
+        "possible": "[]"
+      },
+      {
+        "encoder": "GZ",
+        "commutator": "[U,RUR']",
+        "detailed": "URUR'U'RUR",
+        "block": "Z",
+        "step": "RUR'",
+        "possible": "[]"
+      },
+      {
+        "encoder": "GA",
+        "commutator": "[U,RUR']",
+        "detailed": "URUR'U'RUR",
+        "block": "Z",
+        "step": "RUR'",
+        "possible": "[]"
+      }
+    ],
+    "all": {
+      "R.F.R": [
+        {
+          "encoder": "ZG",
+          "commutator": "[R'DR,U]",
+          "detailed": "URUR'U'RUR",
+          "block": "Z",
+          "step": "RUR'",
+          "possible": "[]"
+        }
+      ]
+    }
+  }
+}

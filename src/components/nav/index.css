@@ -1,0 +1,25 @@
+ul {
+  display: flex;
+}
+ul li{
+  list-style: none;
+  margin: 5px;
+  width: 80px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+}
+ul li:hover {
+  border: 2px solid #ffe4ff;
+  border-radius: 10px;
+  box-shadow: 4px 6px 5px #ffe4ff;
+}
+.menu {
+  margin-left: 200px;
+}
+
+.link {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
