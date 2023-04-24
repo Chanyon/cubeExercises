@@ -21,3 +21,12 @@ export interface ThreeStyleInfo {
     }
   }
 }
+
+export interface ThreeStyleInfoItem {
+		encoder: string,
+		commutator: string,
+		detailed: string,
+		block?: string,
+		step: string,
+		possible?: string
+	} 

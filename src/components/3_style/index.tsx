@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Box, Button, Card, CardBody, Container, Flex, HStack, Input, PinInput, PinInputField, Select, Stack, Text } from "@chakra-ui/react";
 import { getData } from "../../utils/fetch";
-import { ThreeStyleInfo } from "../../types/data";
+import { ThreeStyleInfo,ThreeStyleInfoItem } from "../../types/data";
 import { string2FormulaArr } from "../../utils/str2Formula";
 
 // type A<K extends string> = K extends `all` ? {
@@ -32,23 +32,23 @@ export function ThreeStyle() {
 		corners: {
 			base: [
 				{
-					"encoder": "GM",
-					"commutator": "[U,RUR']",
-					"detailed": "URUR'U'RUR",
-					"block": "Z",
-					"step": "RUR'",
-					"possible": "[]"
+					encoder: "GM",
+					commutator: "[U,RUR']",
+					detailed: "URUR'U'RUR",
+					block: "Z",
+					step: "RUR'",
+					possible: "[]"
 				},
 			],
 			all: {
 				"R.F.R": [
 					{
-						"encoder": "ZG",
-						"commutator": "[R'DR,U]",
-						"detailed": "URUR'U'RUR",
-						"block": "Z",
-						"step": "RUR'",
-						"possible": "[]"
+						encoder: "ZG",
+						commutator: "[R'DR,U]",
+						detailed: "URUR'U'RUR",
+						block: "Z",
+						step: "RUR'",
+						possible: "[]"
 					}
 				]
 			}
@@ -58,7 +58,7 @@ export function ThreeStyle() {
 	const [currentAuthor, setCurrentAuthor] = useState("shaozi");
 	const [currentCategory, setCurrentCategory] = useState("base");
 
-	const [current, setCurrent] = useState([{
+	const [current, setCurrent] = useState<Array<ThreeStyleInfoItem>>([{
 		encoder: "AZ",
 		commutator: "[U,RUR']",
 		detailed: "URUR'U'RUR",
@@ -68,7 +68,7 @@ export function ThreeStyle() {
 	}]);
 
 	const [currentIdx, setCurrentIdx] = useState<number>(0);
-	const [currentIdxData, setCurrentIdxData] = useState({
+	const [currentIdxData, setCurrentIdxData] = useState<ThreeStyleInfoItem>({
 		encoder: "AZ",
 		commutator: "[U,RUR']",
 		detailed: "URUR'U'RUR",
@@ -83,14 +83,14 @@ export function ThreeStyle() {
 
 
 	useEffect(() => {
-		getData("../../data/3style.json").then((data) => {
+		getData("data/3style.json").then((data) => {
 			setData(data);
 			const currentData = data?.["corners"][currentCategory];
 			setCurrent(currentData);
 		});
 	}, []);
 
-	useEffect(()=>{
+	useEffect(() => {
 		// let idx = currentIdx;
 		// if (idx >= current.length) {
 		// 	idx = current.length - 1;
@@ -99,7 +99,7 @@ export function ThreeStyle() {
 	}, [current]);
 
 	useEffect(() => {
-		const currentData = data["corners"][currentCategory];
+		const currentData = data["corners"][currentCategory as "all" | "base"];
 		if (Array.isArray(currentData)) {
 			setCurrent(currentData);
 		} else {
@@ -208,7 +208,7 @@ export function ThreeStyle() {
 							</Box>
 							<Box display="flex" justifyContent="center" m={6}>
 								<Button mx={2} onClick={() => prevHandle()}>Prev</Button>
-									<Button mx={2} onClick={() => randomHandle()}>random</Button>
+								<Button mx={2} onClick={() => randomHandle()}>random</Button>
 								<Button mx={2} onClick={() => nextHandle()}>Next</Button>
 							</Box>
 						</Flex>
