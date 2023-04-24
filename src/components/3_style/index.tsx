@@ -83,7 +83,7 @@ export function ThreeStyle() {
 
 
 	useEffect(() => {
-		getData("data/3style.json").then((data) => {
+		getData("cubeExercises/data/3style.json").then((data) => {
 			setData(data);
 			const currentData = data?.["corners"][currentCategory];
 			setCurrent(currentData);
