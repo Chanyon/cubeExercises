@@ -41,12 +41,12 @@ class Rubik {
 			"B'": self.BP.bind(self),
 			"F": self.F.bind(self),
 			"F'": self.FP.bind(self),
-			"M": self.M,
-			"M'": self.MP,
-			"E": self.E,
-			"E'": self.EP,
-			"S": self.S,
-			"S'": self.SP,
+			"M": self.M.bind(self),
+			"M'": self.MP.bind(self),
+			"E": self.E.bind(self),
+			"E'": self.EP.bind(self),
+			"S": self.S.bind(self),
+			"S'": self.SP.bind(self),
 		};
 	}
 	model(type) {
@@ -486,9 +486,9 @@ class Rubik {
 
 	//randomRotate
 	randomRotate(callback) {
-		const stepNum = 10;
+		const stepNum = 22;
 		const stepArr = [];
-		const funcArr = ["R", "U", "D", "F", "D'", "R'", "B'", "L", "B", "R'", "D'", "U'", "B'", "L'", "F'"];
+		const funcArr = ["B", "B", "R", "R", "U", "U", "L", "L", "U'", "R", "R", "D'", "L", "L", "U", "U", "F", "F", "L", "L", "U", "U", "B'", "L'", "R", "D'", "L'", "F", "L'", "B", "B", "U", "U", "R","M'","E"];
 		for (let i = 0; i < stepNum; i++) {
 			const num = Math.floor((Math.random() * funcArr.length));
 			stepArr.push(funcArr[num]);

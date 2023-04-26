@@ -15,7 +15,7 @@ function Cube() {
   }, []);
 
   return (
-    <Flex w="80%" h="100%" bg="#ffffff">
+    <Flex w="80%" h="830px" bg="#ffffff">
       <Box w="60%">1</Box>
       <Box w="40%">
         <div ref={divRef} id="retina"></div>
