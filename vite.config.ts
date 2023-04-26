@@ -1,4 +1,4 @@
-import { defineConfig } from 'vite'
+import { defineConfig, splitVendorChunkPlugin } from 'vite'
 import react from '@vitejs/plugin-react'
 import copy from 'rollup-plugin-copy'
 import path from "path";
@@ -6,7 +6,7 @@ import path from "path";
 // https://vitejs.dev/config/
 export default defineConfig({
   base: "./",
-  plugins: [react()],
+  plugins: [react(),splitVendorChunkPlugin()],
   resolve: {
     alias: {
       "@": path.resolve(__dirname,"./src"),
@@ -29,6 +29,11 @@ export default defineConfig({
     //       ]
     //     })
     //   ]
+    //   output: {
+    //     manualChunks: {
+          
+    //     }
+    //   }
     // }
   }
 })
