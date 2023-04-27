@@ -17,7 +17,17 @@ ul li:hover {
 .menu {
   margin-left: 200px;
 }
+@media screen and (max-width: 768px) {
+  .menu {
+    margin-left: 20px;
+  }
+}
 
+@media screen and (max-width: 990px) {
+  .menu {
+    margin-left: 150px;
+  }
+}
 .link {
   display: inline-block;
   width: 100%;

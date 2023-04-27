@@ -1,6 +1,6 @@
 import React from "react";
 import {Routes, Route } from "react-router-dom";
-import { ThreeStyle } from "../components/3_style";
+import { ThreeStyle } from "../components/3_cycle";
 import { Main } from "../components/home/Main";
 import { Cube } from "../components/cube/LineEx";
 import { About } from "../components/about";

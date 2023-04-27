@@ -1,7 +1,7 @@
 export enum RouterKey {
   home = "home",
   cfop = "cfop",
-  style = "3-style",
+  cycle = "3-cycle",
   cube = "cube",
   about = "about"
 }
@@ -20,7 +20,7 @@ export const routers: Array<RouterInfo> = [
   },
   {
     url: "/style",
-    key: RouterKey.style,
+    key: RouterKey.cycle,
     text: "盲拧记忆"
   },
   {

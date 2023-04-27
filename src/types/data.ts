@@ -1,32 +1,23 @@
 export interface ThreeStyleInfo {
-  edge: {},
-  corners: {
-    base: Array<{
-      encoder: string,
-      commutator: string,
-      detailed: string,
-      block?: string,
-      step: string,
-      possible?: string
-    }>
+  edge: {
+    base: Array<ThreeStyleInfoItem>
     all: {
-      [key in string]: Array<{
-        encoder: string,
-        commutator: string,
-        detailed: string,
-        block?: string,
-        step: string,
-        possible?: string
-      }>
+      [key in string]: Array<ThreeStyleInfoItem>
+    }
+  },
+  corners: {
+    base: Array<ThreeStyleInfoItem>
+    all: {
+      [key in string]: Array<ThreeStyleInfoItem>
     }
   }
 }
 
 export interface ThreeStyleInfoItem {
-		encoder: string,
-		commutator: string,
-		detailed: string,
-		block?: string,
-		step: string,
-		possible?: string
-	} 
+  encoder: string,
+  commutator: string,
+  detailed: string,
+  block?: string,
+  step: string,
+  possible?: string
+} 
