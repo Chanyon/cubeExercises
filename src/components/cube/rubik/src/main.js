@@ -122,7 +122,7 @@ class Main {
         if (!this.isRotating && this.intersect) {
           this.startPoint = this.intersect.point;
         }
-        console.log(this.intersect);
+        // console.log(this.intersect);
       });
       document.addEventListener('touchmove', e => {
         let touch = e.touches[0];
@@ -264,7 +264,7 @@ class Main {
     const direction = this.targetRubik.getDirection(sub, this.normalize);//计算转动方向
     const cubeIndex = this.intersect.object.cubeIndex;
     this.targetRubik.rotateMove(cubeIndex, direction);
-
+    // console.log(direction);
     const anotherIndex = cubeIndex - this.targetRubik.minCubeIndex + this.anotherRubik.minCubeIndex;
     this.anotherRubik.rotateMove(anotherIndex, direction, function () {
       self.resetRotateParams();

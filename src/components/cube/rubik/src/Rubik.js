@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-
+import { randInt } from "./utils/utils";
 const BasicParams = {
 	x: 0,
 	y: 0,
@@ -47,6 +47,18 @@ class Rubik {
 			"E'": self.EP.bind(self),
 			"S": self.S.bind(self),
 			"S'": self.SP.bind(self),
+			"R2": self.R2.bind(self),
+			"F2": self.F2.bind(self),
+			"L2": self.L2.bind(self),
+			"U2": self.U2.bind(self),
+			"B2": self.B2.bind(self),
+			"D2": self.D2.bind(self),
+			"Rw": self.Rw.bind(self),
+			"Rw'": self.RwP.bind(self),
+			"Fw": self.Fw.bind(self),
+			"Fw'": self.FwP.bind(self),
+			"Uw": self.Uw.bind(self),
+			"Uw'": self.UwP.bind(self),
 		};
 	}
 	model(type) {
@@ -103,13 +115,14 @@ class Rubik {
 		const zAngle = sub.angleTo(this.zLine);
 		const zAngleAd = sub.angleTo(this.zLineAd);
 		const minAngle = Math.min(xAngle, xAngleAd, yAngle, yAngleAd, zAngle, zAngleAd);
-
+	
 		const xLine = new THREE.Vector3(1, 0, 0);
 		const xLineAd = new THREE.Vector3(-1, 0, 0);
 		const yLine = new THREE.Vector3(0, 1, 0);
 		const yLineAd = new THREE.Vector3(0, -1, 0);
 		const zLine = new THREE.Vector3(0, 0, 1);
 		const zLineAd = new THREE.Vector3(0, 0, -1);
+
 		let direction = 0;
 		switch (minAngle) {
 			case xAngle:
@@ -297,10 +310,10 @@ class Rubik {
 			currentstamp = startstamp + totalTime;
 		}
 		let rotateMatrix = new THREE.Matrix4();//旋转矩阵
-		let origin = new THREE.Vector3(0, 0, 0);
-		let xLine = new THREE.Vector3(1, 0, 0);
-		let yLine = new THREE.Vector3(0, 1, 0);
-		let zLine = new THREE.Vector3(0, 0, 1);
+		const origin = new THREE.Vector3(0, 0, 0);
+		const xLine = new THREE.Vector3(1, 0, 0);
+		const yLine = new THREE.Vector3(0, 1, 0);
+		const zLine = new THREE.Vector3(0, 0, 1);
 
 		switch (direction) {
 			case 0.1:
@@ -436,63 +449,128 @@ class Rubik {
 		this.rotateMove(this.minCubeIndex, 2.4, next, 100);
 	}
 	F(next) {
-		this.rotateMove(this.minCubeIndex, 4.1, next, 100);
+		this.rotateMove(this.minCubeIndex, 3.1, next, 100);
 	}
 	D(next) {
-		this.rotateMove(this.minCubeIndex, 4.4, next, 100);
+		this.rotateMove(this.minCubeIndex + 6, 4.4, next, 100);
 	}
 	L(next) {
-		this.rotateMove(this.minCubeIndex, 3.4, next, 100);
+		this.rotateMove(this.minCubeIndex + 18, 1.1, next, 100);
 	}
 	B(next) {
-		this.rotateMove(this.minCubeIndex, 2.1, next, 100);
+		this.rotateMove(this.minCubeIndex + 2,  2.1, next, 100);
 	}
 	UP(next) {
-		this.rotateMove(this.minCubeIndex, 0.3, next, 100);
+		this.rotateMove(this.minCubeIndex, 4.4, next, 100);
 	}
 	RP(next) {
 		this.rotateMove(this.minCubeIndex, 3.4, next, 100);
 	}
 	BP(next) {
-		this.rotateMove(this.minCubeIndex, 2.1, next, 100);
+		this.rotateMove(this.minCubeIndex + 2, 4.1, next, 100);
 	}
 	LP(next) {
-		this.rotateMove(this.minCubeIndex, 2.4, next, 100);
+		this.rotateMove(this.minCubeIndex + 18, 2.4, next, 100);
 	}
 	FP(next) {
 		this.rotateMove(this.minCubeIndex, 2.1, next, 100);
 	}
 	DP(next) {
-		this.rotateMove(this.minCubeIndex, 1.3, next, 100);
+		this.rotateMove(this.minCubeIndex + 6, 1.3, next, 100);
 	}
 	E(next) {
-		this.rotateMove(this.minCubeIndex, 0.3, next, 100);
+		this.rotateMove(this.minCubeIndex + 4, 5.4, next, 100);
 	}
 	S(next) {
-		this.rotateMove(this.minCubeIndex, 4.1, next, 100);
+		this.rotateMove(this.minCubeIndex + 13, 4.1, next, 100);
 	}
 	M(next) {
-		this.rotateMove(this.minCubeIndex, 2.4, next, 100);
+		this.rotateMove(this.minCubeIndex + 10, 3.4, next, 100);
 	}
 	EP(next) {
-		this.rotateMove(this.minCubeIndex, 5.4, next, 100);
+		this.rotateMove(this.minCubeIndex + 4, 4.4, next, 100);
 	}
 	SP(next) {
-		this.rotateMove(this.minCubeIndex, 2.1, next, 100);
+		this.rotateMove(this.minCubeIndex + 13, 5.1, next, 100);
 	}
 	MP(next) {
-		this.rotateMove(this.minCubeIndex, 3.4, next, 100);
+		this.rotateMove(this.minCubeIndex + 10, 1.2, next, 100);
 	}
+	U2(next) {
+		this.rotateMove(this.minCubeIndex, 1.3, () => {
+			this.rotateMove(this.minCubeIndex, 1.3, next, 100);
+		}, 100);
+	}
+	R2(next) {
+		this.rotateMove(this.minCubeIndex, 2.4, () => {
+			this.rotateMove(this.minCubeIndex, 2.4, next, 100);
+		}, 100);
+	}
+	F2(next) {
+		this.rotateMove(this.minCubeIndex, 4.1, () => {
+			this.rotateMove(this.minCubeIndex, 4.1, next, 100);
+		}, 100);
+	}
+	D2(next) {
+		this.rotateMove(this.minCubeIndex, 4.4, () => {
+			this.rotateMove(this.minCubeIndex, 4.4, next, 100);
+		}, 100);
+	}
+	L2(next) {
+		this.rotateMove(this.minCubeIndex + 18, 1.1, () => {
+			this.rotateMove(this.minCubeIndex + 18, 1.1, next, 100);
+		}, 100);
+	}
+	B2(next) {
+		this.rotateMove(this.minCubeIndex, 3.2, () => {
+			this.rotateMove(this.minCubeIndex, 3.2, next, 100);
+		}, 100);
+	}
+	Rw(next) {
+		this.rotateMove(this.minCubeIndex, 2.4, () => {
+			this.rotateMove(this.minCubeIndex + 10, 1.2, next, 100);
+		}, 100);
+	}
+	RwP(next) {
+		this.rotateMove(this.minCubeIndex, 3.4, () => {
+			this.rotateMove(this.minCubeIndex + 10, 3.4, next, 100);
+		}, 100);
+	}
+	Uw(next) {
+		this.rotateMove(this.minCubeIndex, 1.3, () => {
+			this.rotateMove(this.minCubeIndex + 4, 5.4, next, 100);
+		}, 100);
+	}
+	UwP(next) {
+		this.rotateMove(this.minCubeIndex, 4.4, () => {
+			this.rotateMove(this.minCubeIndex + 4, 4.4, next, 100);
+		}, 100);
+	}
+	Fw(next) {
+		this.rotateMove(this.minCubeIndex, 4.1, () => {
+			this.rotateMove(this.minCubeIndex + 13, 4.1, next, 100);
+		}, 100);
+	}
+	FwP(next) {
+		this.rotateMove(this.minCubeIndex, 2.1, () => {
+			this.rotateMove(this.minCubeIndex + 13, 5.1, next, 100);
+		}, 100);
+	}
+	//Uw2,Fw2,Rw2
 
 	//randomRotate
 	randomRotate(callback) {
 		const stepNum = 22;
-		const stepArr = [];
-		const funcArr = ["B", "B", "R", "R", "U", "U", "L", "L", "U'", "R", "R", "D'", "L", "L", "U", "U", "F", "F", "L", "L", "U", "U", "B'", "L'", "R", "D'", "L'", "F", "L'", "B", "B", "U", "U", "R","M'","E"];
-		for (let i = 0; i < stepNum; i++) {
-			const num = Math.floor((Math.random() * funcArr.length));
-			stepArr.push(funcArr[num]);
+		let stepArr = [];
+		const funcArr = ["M","S","E","D", "L", "F", "D'", "D2", "F'", "F2", "L'", "L2", "B", "B'", "B2", "U'", "U", "U2", "R2", "R", "R'","Rw","Rw'","Fw","Fw'","Uw","Uw'"];
+		const len = funcArr.length;
+		for (let i = 0; i < len - 1; i++) {
+			const rand = randInt(i, len - 1);
+			const temp = funcArr[i];
+			funcArr[i] = funcArr[rand];
+			funcArr[rand] = temp;
 		}
+		stepArr = funcArr.slice(0, stepNum);
 		this.runMethodAtNo(stepArr, 0, callback);
 		// console.log(stepArr);
 		return stepArr;
