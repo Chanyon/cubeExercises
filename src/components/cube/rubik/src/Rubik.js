@@ -1,5 +1,6 @@
 import * as THREE from 'three';
-import { randInt } from "./utils/utils";
+import { randInt, RandomStep } from "./utils/utils";
+
 const BasicParams = {
 	x: 0,
 	y: 0,
@@ -59,6 +60,14 @@ class Rubik {
 			"Fw'": self.FwP.bind(self),
 			"Uw": self.Uw.bind(self),
 			"Uw'": self.UwP.bind(self),
+			"Dw": self.Dw.bind(self),
+			"Dw'": self.DwP.bind(self),
+			"Rw2": self.Rw2.bind(self),
+			"Dw2": self.Dw2.bind(self),
+			"Fw2": self.Fw2.bind(self),
+			"Rw2'": self.Rw2P.bind(self),
+			"Fw2'": self.Fw2P.bind(self),
+			"Dw2'": self.Dw2P.bind(self),
 		};
 	}
 	model(type) {
@@ -115,7 +124,7 @@ class Rubik {
 		const zAngle = sub.angleTo(this.zLine);
 		const zAngleAd = sub.angleTo(this.zLineAd);
 		const minAngle = Math.min(xAngle, xAngleAd, yAngle, yAngleAd, zAngle, zAngleAd);
-	
+
 		const xLine = new THREE.Vector3(1, 0, 0);
 		const xLineAd = new THREE.Vector3(-1, 0, 0);
 		const yLine = new THREE.Vector3(0, 1, 0);
@@ -458,7 +467,7 @@ class Rubik {
 		this.rotateMove(this.minCubeIndex + 18, 1.1, next, 100);
 	}
 	B(next) {
-		this.rotateMove(this.minCubeIndex + 2,  2.1, next, 100);
+		this.rotateMove(this.minCubeIndex + 2, 2.1, next, 100);
 	}
 	UP(next) {
 		this.rotateMove(this.minCubeIndex, 4.4, next, 100);
@@ -556,23 +565,78 @@ class Rubik {
 			this.rotateMove(this.minCubeIndex + 13, 5.1, next, 100);
 		}, 100);
 	}
-	//Uw2,Fw2,Rw2
+	Dw(next) {
+		this.rotateMove(this.minCubeIndex + 6, 4.4, () => {
+			this.rotateMove(this.minCubeIndex + 4, 4.4, next, 100);
+		}, 100);
+	}
+	DwP(next) {
+		this.rotateMove(this.minCubeIndex + 6, 1.3, () => {
+			this.rotateMove(this.minCubeIndex + 4, 5.4, next, 100);
+		}, 100);
+	}
+	Rw2(next) {
+		this.rotateMove(this.minCubeIndex, 2.4, () => {
+			this.rotateMove(this.minCubeIndex + 10, 1.2, () => {
+				this.rotateMove(this.minCubeIndex, 2.4, () => {
+					this.rotateMove(this.minCubeIndex + 10, 1.2, next, 100);
+				}, 100);
+			}, 100);
+		}, 100);
+	}
+	Dw2(next) {
+		this.rotateMove(this.minCubeIndex + 6, 4.4, () => {
+			this.rotateMove(this.minCubeIndex + 4, 4.4, () => {
+				this.rotateMove(this.minCubeIndex + 6, 4.4, () => {
+					this.rotateMove(this.minCubeIndex + 4, 4.4, next, 100);
+				}, 100);
+			}, 100);
+		}, 100);
+	}
+	Fw2(next) {
+		this.rotateMove(this.minCubeIndex, 4.1, () => {
+			this.rotateMove(this.minCubeIndex + 13, 4.1, () => {
+				this.rotateMove(this.minCubeIndex, 4.1, () => {
+					this.rotateMove(this.minCubeIndex + 13, 4.1, next, 100);
+				}, 100);
+			}, 100);
+		}, 100);
+	}
+	Rw2P(next) {
+		this.rotateMove(this.minCubeIndex, 3.4, () => {
+			this.rotateMove(this.minCubeIndex + 10, 3.4, () => {
+				this.rotateMove(this.minCubeIndex, 3.4, () => {
+					this.rotateMove(this.minCubeIndex + 10, 3.4, next, 100);
+				}, 100);
+			}, 100);
+		}, 100);
+	}
+	Dw2P(next) {
+		this.rotateMove(this.minCubeIndex + 6, 1.3, () => {
+			this.rotateMove(this.minCubeIndex + 4, 5.4, () => {
+				this.rotateMove(this.minCubeIndex + 6, 1.3, () => {
+					this.rotateMove(this.minCubeIndex + 4, 5.4, next, 100);
+				}, 100);
+			}, 100);
+		}, 100);
+	}
+	Fw2P(next) {
+		this.rotateMove(this.minCubeIndex, 2.1, () => {
+			this.rotateMove(this.minCubeIndex + 13, 5.1, () => {
+				this.rotateMove(this.minCubeIndex, 2.1, () => {
+					this.rotateMove(this.minCubeIndex + 13, 5.1, next, 100);
+				}, 100);
+			}, 100);
+		}, 100);
+	}
 
 	//randomRotate
 	randomRotate(callback) {
-		const stepNum = 22;
-		let stepArr = [];
-		const funcArr = ["M","S","E","D", "L", "F", "D'", "D2", "F'", "F2", "L'", "L2", "B", "B'", "B2", "U'", "U", "U2", "R2", "R", "R'","Rw","Rw'","Fw","Fw'","Uw","Uw'"];
-		const len = funcArr.length;
-		for (let i = 0; i < len - 1; i++) {
-			const rand = randInt(i, len - 1);
-			const temp = funcArr[i];
-			funcArr[i] = funcArr[rand];
-			funcArr[rand] = temp;
-		}
-		stepArr = funcArr.slice(0, stepNum);
-		this.runMethodAtNo(stepArr, 0, callback);
+		const stepNum = 23;
+		const self = this;
+		const stepArr = RandomStep(stepNum).split(" ");
 		// console.log(stepArr);
+		self.runMethodAtNo(stepArr, 0, callback);
 		return stepArr;
 	}
 
@@ -592,6 +656,10 @@ class Rubik {
 				}
 			});
 		}
+	}
+
+	stepMove(stepArr, next) {
+		this.runMethodAtNo(stepArr,0, next);
 	}
 
 	//reset

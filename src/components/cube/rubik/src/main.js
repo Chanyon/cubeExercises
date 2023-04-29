@@ -300,16 +300,22 @@ class Main {
 
   startDisturbed2(callback) {
     const self = this;
-    if (!this.isRotating) {
+    if (!self.isRotating) {
       this.isRotating = true;
       const stepArr = this.frontRubik.randomRotate();
-      this.endRubik.runMethodAtNo(stepArr, 0, () => {
+      self.endRubik.runMethodAtNo(stepArr, 0, () => {
         if (callback) {
           callback();
         }
         self.resetRotateParams();
       });
     }
+  }
+
+  keyboardMove(stepArr) {
+    this.frontRubik.stepMove(stepArr, () => {
+      this.endRubik.stepMove(stepArr);
+    });
   }
 }
 
