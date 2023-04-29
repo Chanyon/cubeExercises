@@ -467,7 +467,7 @@ class Rubik {
 		this.rotateMove(this.minCubeIndex + 18, 1.1, next, 70);
 	}
 	B(next) {
-		this.rotateMove(this.minCubeIndex + 2, 2.1, next, 70);
+		this.rotateMove(this.minCubeIndex + 2, 4.1, next, 70);
 	}
 	UP(next) {
 		this.rotateMove(this.minCubeIndex, 4.4, next, 70);
@@ -476,7 +476,7 @@ class Rubik {
 		this.rotateMove(this.minCubeIndex, 3.4, next, 70);
 	}
 	BP(next) {
-		this.rotateMove(this.minCubeIndex + 2, 4.1, next, 70);
+		this.rotateMove(this.minCubeIndex + 2, 2.1, next, 70);
 	}
 	LP(next) {
 		this.rotateMove(this.minCubeIndex + 18, 2.4, next, 70);
