@@ -5,6 +5,7 @@ import { isPhone } from "./utils/utils.js";
 import ResetBtn from "./reset.js";
 import DisorganizeBtn from "./disorganize.js";
 
+//* 参考 https://github.com/newbieYoung/Threejs_rubik
 // 坐标系
 let axesHelper = new THREE.AxesHelper(250);
 //页面加载完成
@@ -62,13 +63,6 @@ class Main {
     this.originWidth = this.originHeight * this.camera.aspect;
 
     this.uiRadio = this.originWidth / this.width;
-
-    //轨道控制器
-    // this.orbitController = new THREE.OrbitControls(this.camera, this.renderer.domElement);
-    // this.orbitController.enableZoom = false;
-    // this.orbitController.rotateSpeed = 2;
-    // this.orbitController.target = this.viewCenter;
-    // this.orbitController.maxPolarAngle = Math.PI / 2;
   }
 
   initLight() {
@@ -105,7 +99,6 @@ class Main {
   render() {
     this.renderer.clear();
     this.renderer.render(this.scene, this.camera);
-    // this.orbitController.update();
     requestAnimationFrame(this.render.bind(this));
   }
   // touch event
@@ -149,7 +142,6 @@ class Main {
       const self = this;
       self.retina.addEventListener('mousedown', e => {
         const touch = e;
-        this.startPoint = touch;
         if (this.touchLine.isHover(touch)) {
           this.touchLine.enable();
         } else if (this.resetBtn.isHover(touch) && !this.isRotating) {
@@ -159,18 +151,20 @@ class Main {
           this.disorganizeBtn.enable();
           this.startDisturbed2();
         } else {
+          //触摸点不在魔方上
           this.getIntersects(e);
+          if (!this.isRotating && !this.intersect) {
+            console.log(123);
+            this.startPoint = new THREE.Vector2(touch.offsetX, touch.offsetY);
+          }
           if (!this.isRotating && this.intersect) {
             this.startPoint = this.intersect.point;
           }
         }
-
-
-        // console.log(this.intersect);
       });
+
       self.retina.addEventListener('mousemove', e => {
         const touch = e;
-        // console.log(e);
         if (this.touchLine.activate) {
           this.touchLine.move(touch.offsetY);
           let frontPercent = touch.offsetY / self.height;
@@ -178,6 +172,13 @@ class Main {
           this.rubikResize(frontPercent, endPercent);
         } else {
           this.getIntersects(e);
+          if (!this.isRotating && this.startPoint && !this.intersect) {
+            this.movePoint = new THREE.Vector2(touch.offsetX, touch.offsetY);
+            if (!this.movePoint.equals(this.startPoint)) {
+              this.rotateView();
+            }
+          }
+
           if (!this.isRotating && this.startPoint && this.intersect) {
             this.movePoint = this.intersect.point;
             if (!this.movePoint.equals(this.startPoint)) {
@@ -185,7 +186,9 @@ class Main {
             }
           }
         }
+
       });
+
       self.retina.addEventListener('mouseup', e => {
         this.touchLine.disable();
         this.resetBtn.disable();
@@ -313,9 +316,115 @@ class Main {
   }
 
   keyboardMove(stepArr) {
-    this.frontRubik.stepMove(stepArr, () => {
-      this.endRubik.stepMove(stepArr);
+    const self = this;
+    this.frontRubik.stepMove(stepArr, 0);
+    self.endRubik.stepMove(stepArr, 0, () => {
+      self.resetRotateParams();
     });
+  }
+
+  //视图转动
+  getViewDirection(type, startPoint, movePoint) {
+    let direction = 0;
+    const rad = 30 * Math.PI / 180;
+    const lenX = movePoint.x - startPoint.x;
+    const lenY = movePoint.y - startPoint.y;
+
+    if (type === this.frontViewName) {
+      if (startPoint.x > this.width / 2) {
+        if (Math.abs(lenY) > Math.abs(lenX) * Math.tan(rad)) {
+          if (lenY < 0) {
+            direction = 2.1;
+          } else {
+            direction = 3.1;
+          }
+        } else {
+          if (lenX > 0) {
+            direction = 0.3;
+          } else {
+            direction = 1.3;
+          }
+        }
+      } else {
+        if (Math.abs(lenY) > Math.abs(lenX) * Math.tan(rad)) {
+          if (lenY < 0) {
+            direction = 2.4;
+          } else {
+            direction = 3.4;
+          }
+        } else {
+          if (lenX > 0) {
+            direction = 4.4;
+          } else {
+            direction = 5.4;
+          }
+        }
+      }
+    } else {
+      // this.endRubik
+      if (startPoint.x > this.width / 2) {
+        if (Math.abs(lenY) > Math.abs(lenX) * Math.tan(rad)) {
+          if (lenY < 0) {
+            direction = 2.2;
+          } else {
+            direction = 3.2;
+          }
+        } else {
+          if (lenX > 0) {
+            direction = 1.4;
+          } else {
+            direction = 0.4;
+          }
+        }
+      } else {
+        if (Math.abs(lenY) > Math.abs(lenX) * Math.tan(rad)) {
+          if (lenY < 0) {
+            direction = 2.3;
+          } else {
+            direction = 3.3;
+          }
+        } else {
+          if (lenX > 0) {
+            direction = 5.3;
+          } else {
+            direction = 4.3;
+          }
+        }
+      }
+    }
+
+    return direction;
+  }
+
+  getViewRotateCubeIndex(type) {
+    if (this.frontViewName === type) {
+      return 10;
+    } else {
+      return 65;
+    }
+  }
+
+  rotateView() {
+    const self = this;
+    if (this.startPoint.y < this.touchLine.screenRect.top) {
+      this.targetRubik = this.frontRubik;
+      this.anotherRubik = this.endRubik;
+    }
+    if (this.startPoint.y > this.touchLine.screenRect.top + this.touchLine.screenRect.height) {
+      this.targetRubik = this.endRubik;
+      this.anotherRubik = this.frontRubik;
+    }
+
+    if (this.targetRubik && this.anotherRubik) {
+      this.isRotating = true;
+      const targetType = this.targetRubik.group.childType;
+      const cubeIndex = this.getViewRotateCubeIndex(targetType);
+      const direction = this.getViewDirection(targetType, this.startPoint, this.movePoint);
+      this.targetRubik.rotateMoveWhole(cubeIndex, direction);
+      this.anotherRubik.rotateMoveWhole(cubeIndex, direction, () => {
+        self.resetRotateParams();
+      });
+    }
   }
 }
 

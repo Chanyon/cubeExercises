@@ -18,7 +18,7 @@ class Rubik {
 		this.cubes = [];
 
 		this.initStatus = [];
-		this.defaultTotalTime = 250;//默认转动动画时长
+		this.defaultTotalTime = 150;//默认转动动画时长
 
 		this.xLine = new THREE.Vector3(1, 0, 0);
 		this.xLineAd = new THREE.Vector3(-1, 0, 0);
@@ -452,182 +452,182 @@ class Rubik {
 	* S=>4.1, S'=>2.1
 	*/
 	U(next) {
-		this.rotateMove(this.minCubeIndex, 1.3, next, 100);
+		this.rotateMove(this.minCubeIndex, 1.3, next, 70);
 	}
 	R(next) {
-		this.rotateMove(this.minCubeIndex, 2.4, next, 100);
+		this.rotateMove(this.minCubeIndex, 2.4, next, 70);
 	}
 	F(next) {
-		this.rotateMove(this.minCubeIndex, 3.1, next, 100);
+		this.rotateMove(this.minCubeIndex, 3.1, next, 70);
 	}
 	D(next) {
-		this.rotateMove(this.minCubeIndex + 6, 4.4, next, 100);
+		this.rotateMove(this.minCubeIndex + 6, 4.4, next, 70);
 	}
 	L(next) {
-		this.rotateMove(this.minCubeIndex + 18, 1.1, next, 100);
+		this.rotateMove(this.minCubeIndex + 18, 1.1, next, 70);
 	}
 	B(next) {
-		this.rotateMove(this.minCubeIndex + 2, 2.1, next, 100);
+		this.rotateMove(this.minCubeIndex + 2, 2.1, next, 70);
 	}
 	UP(next) {
-		this.rotateMove(this.minCubeIndex, 4.4, next, 100);
+		this.rotateMove(this.minCubeIndex, 4.4, next, 70);
 	}
 	RP(next) {
-		this.rotateMove(this.minCubeIndex, 3.4, next, 100);
+		this.rotateMove(this.minCubeIndex, 3.4, next, 70);
 	}
 	BP(next) {
-		this.rotateMove(this.minCubeIndex + 2, 4.1, next, 100);
+		this.rotateMove(this.minCubeIndex + 2, 4.1, next, 70);
 	}
 	LP(next) {
-		this.rotateMove(this.minCubeIndex + 18, 2.4, next, 100);
+		this.rotateMove(this.minCubeIndex + 18, 2.4, next, 70);
 	}
 	FP(next) {
-		this.rotateMove(this.minCubeIndex, 2.1, next, 100);
+		this.rotateMove(this.minCubeIndex, 2.1, next, 70);
 	}
 	DP(next) {
-		this.rotateMove(this.minCubeIndex + 6, 1.3, next, 100);
+		this.rotateMove(this.minCubeIndex + 6, 1.3, next, 70);
 	}
 	E(next) {
-		this.rotateMove(this.minCubeIndex + 4, 5.4, next, 100);
+		this.rotateMove(this.minCubeIndex + 4, 5.4, next, 70);
 	}
 	S(next) {
-		this.rotateMove(this.minCubeIndex + 13, 4.1, next, 100);
+		this.rotateMove(this.minCubeIndex + 13, 4.1, next, 70);
 	}
 	M(next) {
-		this.rotateMove(this.minCubeIndex + 10, 3.4, next, 100);
+		this.rotateMove(this.minCubeIndex + 10, 3.4, next, 70);
 	}
 	EP(next) {
-		this.rotateMove(this.minCubeIndex + 4, 4.4, next, 100);
+		this.rotateMove(this.minCubeIndex + 4, 4.4, next, 70);
 	}
 	SP(next) {
-		this.rotateMove(this.minCubeIndex + 13, 5.1, next, 100);
+		this.rotateMove(this.minCubeIndex + 13, 5.1, next, 70);
 	}
 	MP(next) {
-		this.rotateMove(this.minCubeIndex + 10, 1.2, next, 100);
+		this.rotateMove(this.minCubeIndex + 10, 1.2, next, 70);
 	}
 	U2(next) {
 		this.rotateMove(this.minCubeIndex, 1.3, () => {
-			this.rotateMove(this.minCubeIndex, 1.3, next, 100);
-		}, 100);
+			this.rotateMove(this.minCubeIndex, 1.3, next, 70);
+		}, 70);
 	}
 	R2(next) {
 		this.rotateMove(this.minCubeIndex, 2.4, () => {
-			this.rotateMove(this.minCubeIndex, 2.4, next, 100);
-		}, 100);
+			this.rotateMove(this.minCubeIndex, 2.4, next, 70);
+		}, 70);
 	}
 	F2(next) {
 		this.rotateMove(this.minCubeIndex, 4.1, () => {
-			this.rotateMove(this.minCubeIndex, 4.1, next, 100);
-		}, 100);
+			this.rotateMove(this.minCubeIndex, 4.1, next, 70);
+		}, 70);
 	}
 	D2(next) {
 		this.rotateMove(this.minCubeIndex, 4.4, () => {
-			this.rotateMove(this.minCubeIndex, 4.4, next, 100);
-		}, 100);
+			this.rotateMove(this.minCubeIndex, 4.4, next, 70);
+		}, 70);
 	}
 	L2(next) {
 		this.rotateMove(this.minCubeIndex + 18, 1.1, () => {
-			this.rotateMove(this.minCubeIndex + 18, 1.1, next, 100);
-		}, 100);
+			this.rotateMove(this.minCubeIndex + 18, 1.1, next, 70);
+		}, 70);
 	}
 	B2(next) {
 		this.rotateMove(this.minCubeIndex, 3.2, () => {
-			this.rotateMove(this.minCubeIndex, 3.2, next, 100);
-		}, 100);
+			this.rotateMove(this.minCubeIndex, 3.2, next, 70);
+		}, 70);
 	}
 	Rw(next) {
 		this.rotateMove(this.minCubeIndex, 2.4, () => {
-			this.rotateMove(this.minCubeIndex + 10, 1.2, next, 100);
-		}, 100);
+			this.rotateMove(this.minCubeIndex + 10, 1.2, next, 70);
+		}, 70);
 	}
 	RwP(next) {
 		this.rotateMove(this.minCubeIndex, 3.4, () => {
-			this.rotateMove(this.minCubeIndex + 10, 3.4, next, 100);
-		}, 100);
+			this.rotateMove(this.minCubeIndex + 10, 3.4, next, 70);
+		}, 70);
 	}
 	Uw(next) {
 		this.rotateMove(this.minCubeIndex, 1.3, () => {
-			this.rotateMove(this.minCubeIndex + 4, 5.4, next, 100);
-		}, 100);
+			this.rotateMove(this.minCubeIndex + 4, 5.4, next, 70);
+		}, 70);
 	}
 	UwP(next) {
 		this.rotateMove(this.minCubeIndex, 4.4, () => {
-			this.rotateMove(this.minCubeIndex + 4, 4.4, next, 100);
-		}, 100);
+			this.rotateMove(this.minCubeIndex + 4, 4.4, next, 70);
+		}, 70);
 	}
 	Fw(next) {
 		this.rotateMove(this.minCubeIndex, 4.1, () => {
-			this.rotateMove(this.minCubeIndex + 13, 4.1, next, 100);
-		}, 100);
+			this.rotateMove(this.minCubeIndex + 13, 4.1, next, 70);
+		}, 70);
 	}
 	FwP(next) {
 		this.rotateMove(this.minCubeIndex, 2.1, () => {
-			this.rotateMove(this.minCubeIndex + 13, 5.1, next, 100);
-		}, 100);
+			this.rotateMove(this.minCubeIndex + 13, 5.1, next, 70);
+		}, 70);
 	}
 	Dw(next) {
 		this.rotateMove(this.minCubeIndex + 6, 4.4, () => {
-			this.rotateMove(this.minCubeIndex + 4, 4.4, next, 100);
-		}, 100);
+			this.rotateMove(this.minCubeIndex + 4, 4.4, next, 70);
+		}, 70);
 	}
 	DwP(next) {
 		this.rotateMove(this.minCubeIndex + 6, 1.3, () => {
-			this.rotateMove(this.minCubeIndex + 4, 5.4, next, 100);
-		}, 100);
+			this.rotateMove(this.minCubeIndex + 4, 5.4, next, 70);
+		}, 70);
 	}
 	Rw2(next) {
 		this.rotateMove(this.minCubeIndex, 2.4, () => {
 			this.rotateMove(this.minCubeIndex + 10, 1.2, () => {
 				this.rotateMove(this.minCubeIndex, 2.4, () => {
-					this.rotateMove(this.minCubeIndex + 10, 1.2, next, 100);
-				}, 100);
-			}, 100);
-		}, 100);
+					this.rotateMove(this.minCubeIndex + 10, 1.2, next, 70);
+				}, 70);
+			}, 70);
+		}, 70);
 	}
 	Dw2(next) {
 		this.rotateMove(this.minCubeIndex + 6, 4.4, () => {
 			this.rotateMove(this.minCubeIndex + 4, 4.4, () => {
 				this.rotateMove(this.minCubeIndex + 6, 4.4, () => {
-					this.rotateMove(this.minCubeIndex + 4, 4.4, next, 100);
-				}, 100);
-			}, 100);
-		}, 100);
+					this.rotateMove(this.minCubeIndex + 4, 4.4, next, 70);
+				}, 70);
+			}, 70);
+		}, 70);
 	}
 	Fw2(next) {
 		this.rotateMove(this.minCubeIndex, 4.1, () => {
 			this.rotateMove(this.minCubeIndex + 13, 4.1, () => {
 				this.rotateMove(this.minCubeIndex, 4.1, () => {
-					this.rotateMove(this.minCubeIndex + 13, 4.1, next, 100);
-				}, 100);
-			}, 100);
-		}, 100);
+					this.rotateMove(this.minCubeIndex + 13, 4.1, next, 70);
+				}, 70);
+			}, 70);
+		}, 70);
 	}
 	Rw2P(next) {
 		this.rotateMove(this.minCubeIndex, 3.4, () => {
 			this.rotateMove(this.minCubeIndex + 10, 3.4, () => {
 				this.rotateMove(this.minCubeIndex, 3.4, () => {
-					this.rotateMove(this.minCubeIndex + 10, 3.4, next, 100);
-				}, 100);
-			}, 100);
-		}, 100);
+					this.rotateMove(this.minCubeIndex + 10, 3.4, next, 70);
+				}, 70);
+			}, 70);
+		}, 70);
 	}
 	Dw2P(next) {
 		this.rotateMove(this.minCubeIndex + 6, 1.3, () => {
 			this.rotateMove(this.minCubeIndex + 4, 5.4, () => {
 				this.rotateMove(this.minCubeIndex + 6, 1.3, () => {
-					this.rotateMove(this.minCubeIndex + 4, 5.4, next, 100);
-				}, 100);
-			}, 100);
-		}, 100);
+					this.rotateMove(this.minCubeIndex + 4, 5.4, next, 70);
+				}, 70);
+			}, 70);
+		}, 70);
 	}
 	Fw2P(next) {
 		this.rotateMove(this.minCubeIndex, 2.1, () => {
 			this.rotateMove(this.minCubeIndex + 13, 5.1, () => {
 				this.rotateMove(this.minCubeIndex, 2.1, () => {
-					this.rotateMove(this.minCubeIndex + 13, 5.1, next, 100);
-				}, 100);
-			}, 100);
-		}, 100);
+					this.rotateMove(this.minCubeIndex + 13, 5.1, next, 70);
+				}, 70);
+			}, 70);
+		}, 70);
 	}
 
 	//randomRotate
@@ -658,8 +658,8 @@ class Rubik {
 		}
 	}
 
-	stepMove(stepArr, next) {
-		this.runMethodAtNo(stepArr,0, next);
+	stepMove(stepArr, no, next) {
+		this.runMethodAtNo(stepArr, no, next);
 	}
 
 	//reset
@@ -680,6 +680,20 @@ class Rubik {
 					break;
 				}
 			}
+		}
+	}
+
+	rotateMoveWhole(cubeIndex, direction, callback, totalTime) {
+		const self = this;
+		if (cubeIndex && direction) {
+			const time = totalTime ? totalTime : self.defaultTotalTime;
+			const elements = self.cubes;
+			requestAnimationFrame(function (timestamp) {
+				self.rotateAnimation(elements, direction, timestamp, 0, 0, function () {
+					self.updateCubeIndex(elements);
+					callback && callback();
+				}, time);
+			}, totalTime);
 		}
 	}
 }
