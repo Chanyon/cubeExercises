@@ -154,7 +154,6 @@ class Main {
           //触摸点不在魔方上
           this.getIntersects(e);
           if (!this.isRotating && !this.intersect) {
-            console.log(123);
             this.startPoint = new THREE.Vector2(touch.offsetX, touch.offsetY);
           }
           if (!this.isRotating && this.intersect) {
