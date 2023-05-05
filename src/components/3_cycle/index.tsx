@@ -1,9 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Box, Button, Card, CardBody, Checkbox, Container, Flex, Input, Select, Stack, Text } from "@chakra-ui/react";
+import { Box, Button, Card, CardBody, Checkbox, Container, Flex, Input, Select, Text } from "@chakra-ui/react";
 import { useHotkeys } from 'react-hotkeys-hook'
 import { getData } from "../../utils/fetch";
 import { ThreeStyleInfo, ThreeStyleInfoItem } from "../../types/data";
 import { string2FormulaArr } from "../../utils/str2Formula";
+import { Model } from "./model";
 
 type Eval = "Add" | "Sub" | "Random";
 type Category = "base" | "all";
@@ -25,6 +26,7 @@ export function ThreeStyle() {
 	//object.entries
 	const edgeCategory = ["AZ", "AZ", "AZ", "AZ", "AZ", "AZ", "AZ", "AZ", "AZ", "AZ", "AZ", "AZ", "AZ", "AZ"];
 	const cornerCategory = ["R.F.R","R.D.R"];
+	const [customCategory, setCustomCategory] = useState<Array<string>>([]);
 
 	const [data, setData] = useState<ThreeStyleInfo>({
 		edge: {
@@ -113,6 +115,13 @@ export function ThreeStyle() {
 			const currentData = data?.["corners"][currentCategory];
 			setCurrent(currentData);
 		});
+		//
+		const custom = window.localStorage.getItem("custom_group");
+		if (custom) {
+			const customData:Array<string> = JSON.parse(custom);
+			setCustomCategory(customData);
+		}
+
 		//keyboard
 		const keyEnter = (e: KeyboardEvent) => {
 			if (e.key === "Enter") {
@@ -181,8 +190,17 @@ export function ThreeStyle() {
 			}
 		} else {
 			currentSpecific.forEach((item) => {
-					const currentData = data[currentEdgeOrCorner as Structures]["all"][item];		
-					List.push(...currentData);
+					const currentData = data[currentEdgeOrCorner as Structures]["all"][item];
+					if (currentData) {
+						List.push(...currentData);
+					} else {
+						// custom group
+						const local = window.localStorage.getItem(item);
+						if (local) {
+							const data:Array<ThreeStyleInfoItem> = JSON.parse(local);
+							List.push(...data);
+						}
+					}
 			});
 			
 			setCurrent(List);
@@ -252,6 +270,16 @@ export function ThreeStyle() {
 		}
 	};
 
+	const handleSaveCb = (isSave: boolean) => {
+		if (isSave) {
+			const custom = window.localStorage.getItem("custom_group");
+			if (custom) {
+				const customData: Array<string> = JSON.parse(custom);
+				setCustomCategory(customData);
+			}
+		}
+	};
+
 	return (
 		<Box w="80%" h="80%">
 			<Card h="100%">
@@ -291,6 +319,16 @@ export function ThreeStyle() {
 								</Flex>
 							)}
 						</Box>
+						{/* 自定义 */}
+						<Box>
+							<Text m="2">自定义: <Model callback={handleSaveCb}/></Text>
+							{(customCategory.length > 0) && (
+								<Flex wrap="wrap">
+									{customCategory.map((item, idx) => (<Checkbox key={idx} onChange={(e) => handleChangeCheckbox(item, e.target.checked)} size='md' colorScheme='red' mx="2">{item}</Checkbox>))}
+								</Flex>
+							)}
+						</Box>
+
 						<Flex wrap="wrap">
 							<Box p={4}><Text fontSize={18} fontWeight="bold">交换子: {currentIdxData.commutator}</Text></Box>
 							<Box p={4}><Text fontSize={18} fontWeight="bold">交换块: {currentIdxData.block}</Text></Box>
