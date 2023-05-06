@@ -24,8 +24,8 @@ export function ThreeStyle() {
 	};
 
 	//object.entries
-	const edgeCategory = ["AZ", "AZ", "AZ", "AZ", "AZ", "AZ", "AZ", "AZ", "AZ", "AZ", "AZ", "AZ", "AZ", "AZ"];
-	const cornerCategory = ["R.F.R","R.D.R"];
+	const [edgeCategory, setEdgeCategory] = useState<Array<string>>([]);
+	const [cornerCategory, setCornerCategory] = useState<Array<string>>([]);
 	const [customCategory, setCustomCategory] = useState<Array<string>>([]);
 
 	const [data, setData] = useState<ThreeStyleInfo>({
@@ -110,15 +110,26 @@ export function ThreeStyle() {
 
 
 	useEffect(() => {
-		getData("cubeExercises/data/3cycle.json").then((data) => {
+		getData("cubeExercises/data/3cycle.json").then((data: ThreeStyleInfo) => {
 			setData(data);
-			const currentData = data?.["corners"][currentCategory];
+			const currentData = data[currentEdgeOrCorner as "corners"][currentCategory as "base"];
 			setCurrent(currentData);
+			//all category
+			{
+				// TODO Optimize => setEdgeOrCornerAllCategory
+				const edgeAllData = data["edge"]["all"];
+				const edgeKeys = Object.keys(edgeAllData)
+				setEdgeCategory(edgeKeys);
+
+				const cornerAllData = data["corners"]["all"];
+				const cornerKeys = Object.keys(cornerAllData)
+				setCornerCategory(cornerKeys);
+			}
 		});
 		//
 		const custom = window.localStorage.getItem("custom_group");
 		if (custom) {
-			const customData:Array<string> = JSON.parse(custom);
+			const customData: Array<string> = JSON.parse(custom);
 			setCustomCategory(customData);
 		}
 
@@ -175,7 +186,6 @@ export function ThreeStyle() {
 	useEffect(() => {
 		const List: Array<ThreeStyleInfoItem> = [];
 		if (currentSpecific.length === 0) {
-			//! TODO overwrite
 			const currentData = data[currentEdgeOrCorner as Structures][currentCategory as Category];
 			if (Array.isArray(currentData)) {
 				setCurrent(currentData);
@@ -190,19 +200,19 @@ export function ThreeStyle() {
 			}
 		} else {
 			currentSpecific.forEach((item) => {
-					const currentData = data[currentEdgeOrCorner as Structures]["all"][item];
-					if (currentData) {
-						List.push(...currentData);
-					} else {
-						// custom group
-						const local = window.localStorage.getItem(item);
-						if (local) {
-							const data:Array<ThreeStyleInfoItem> = JSON.parse(local);
-							List.push(...data);
-						}
+				const currentData = data[currentEdgeOrCorner as Structures]["all"][item];
+				if (currentData) {
+					List.push(...currentData);
+				} else {
+					// custom group
+					const local = window.localStorage.getItem(item);
+					if (local) {
+						const data: Array<ThreeStyleInfoItem> = JSON.parse(local);
+						List.push(...data);
 					}
+				}
 			});
-			
+
 			setCurrent(List);
 		}
 	}, [currentSpecific]);
@@ -260,13 +270,13 @@ export function ThreeStyle() {
 		setCurrentIdx(idx => changeCurrentIdx("Random", idx));
 	};
 
-	const  handleChangeCheckbox = (specific: string, checked: boolean) => {
+	const handleChangeCheckbox = (specific: string, checked: boolean) => {
 		if (checked) {
-				setCurrentSpecific([...currentSpecific, specific]);
+			setCurrentSpecific([...currentSpecific, specific]);
 		} else {
-				const idx = currentSpecific.indexOf(specific);
-				currentSpecific.splice(idx,1);
-				setCurrentSpecific([...currentSpecific]);
+			const idx = currentSpecific.indexOf(specific);
+			currentSpecific.splice(idx, 1);
+			setCurrentSpecific([...currentSpecific]);
 		}
 	};
 
@@ -315,13 +325,13 @@ export function ThreeStyle() {
 							)}
 							{(currentEdgeOrCorner === "edge") && (
 								<Flex wrap="wrap">
-									{edgeCategory.map((item, idx) => (<Checkbox key={idx} size='md' colorScheme='red' mx="2">{item}</Checkbox>))}
+									{edgeCategory.map((item, idx) => (<Checkbox key={idx} onChange={(e) => handleChangeCheckbox(item, e.target.checked)} size='md' colorScheme='red' mx="2">{item}</Checkbox>))}
 								</Flex>
 							)}
 						</Box>
 						{/* 自定义 */}
 						<Box>
-							<Text m="2">自定义: <Model callback={handleSaveCb}/></Text>
+							<Text m="2">自定义: <Model callback={handleSaveCb} /></Text>
 							{(customCategory.length > 0) && (
 								<Flex wrap="wrap">
 									{customCategory.map((item, idx) => (<Checkbox key={idx} onChange={(e) => handleChangeCheckbox(item, e.target.checked)} size='md' colorScheme='red' mx="2">{item}</Checkbox>))}
