@@ -175,7 +175,7 @@ export function ThreeStyle() {
 	useHotkeys("ctrl+alt+right", () => setCurrentIdx(idx => changeCurrentIdx("Add", idx)));
 
 	useEffect(() => {
-		if (currentValue === currentIdxData.detailed) {
+		if (currentValue === currentIdxData.detailed.split(" ").join("")) {
 			setIsRight(true);
 		} else {
 			setIsRight(false);

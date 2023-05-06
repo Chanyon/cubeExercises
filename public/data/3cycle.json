@@ -58,73 +58,2746 @@
   "corners": {
     "base": [
       {
-        "encoder": "GM",
-        "commutator": "[R'DR,U]",
-        "detailed": "R'DRUR'DRU'",
-        "block": "M",
-        "step": "R'DR",
-        "possible": "[]"
+        "encoder": "GZ",
+        "detailed": "R' D' R U R' D R U'",
+        "commutator": "[R' D' R,U]",
+        "block": "Z",
+        "step": "R' D' R"
       },
       {
-        "encoder": "GZ",
-        "commutator": "[R'D'R,U]",
-        "detailed": "R'D'RUR'DRU'",
-        "block": "Z",
-        "step": "R'D'R",
-        "possible": "[]"
+        "encoder": "GM",
+        "detailed": "R' D R U R' D' R U'",
+        "commutator": "[R' D R,U]",
+        "block": "M",
+        "step": "R' D R"
       },
       {
         "encoder": "GS",
-        "commutator": "[U',RDR']",
-        "detailed": "U'RDR'URD'R'",
+        "detailed": "U' R D R' U R D' R'",
+        "commutator": "[U',R D R']",
         "block": "S",
-        "step": "RDR'",
-        "possible": "[]"
+        "step": "R D R'"
       },
       {
         "encoder": "GQ",
-        "commutator": "[U',RD'R']",
-        "detailed": "U'RD'R'URDR'",
+        "detailed": "U' R D' R' U R D R'",
+        "commutator": "[U',R D' R']",
         "block": "Q",
-        "step": "RD'R'",
-        "possible": "[]"
+        "step": "R D' R'"
+      },
+      {
+        "encoder": "GY",
+        "detailed": "D' R' D R U R' D' R D U'",
+        "commutator": "D':[R' D R,U]",
+        "block": "Y",
+        "step": "D' R' D R"
+      },
+      {
+        "encoder": "GN",
+        "detailed": "D R' D' R U R' D R D' U'",
+        "commutator": "D:[R' D' R,U]",
+        "block": "N",
+        "step": "D R' D' R"
+      },
+      {
+        "encoder": "GT",
+        "detailed": "U' D R D' R' U R D R' D'",
+        "commutator": "D:[U',R D' R']",
+        "block": "T",
+        "step": "D R D' R'"
+      },
+      {
+        "encoder": "GP",
+        "detailed": "U' D' R D R' U R D' R' D ",
+        "commutator": "D':[U',R D R']",
+        "block": "P",
+        "step": "D' R D R'"
+      },
+      {
+        "encoder": "ZG",
+        "detailed": "U R' D' R U' R' D R",
+        "commutator": "[U,R' D' R]",
+        "block": "Z",
+        "step": "R' D' R"
+      },
+      {
+        "encoder": "MG",
+        "detailed": "U R' D R U' R' D' R",
+        "commutator": "[U,R' D R]",
+        "block": "M",
+        "step": "R' D R"
+      },
+      {
+        "encoder": "SG",
+        "detailed": "R D R' U' R D' R' U ",
+        "commutator": "[R D R',U']",
+        "block": "S",
+        "step": "R D R'"
+      },
+      {
+        "encoder": "QG",
+        "detailed": "R D' R' U' R D R' U",
+        "commutator": "[R D' R',U']",
+        "block": "Q",
+        "step": "R D' R'"
+      },
+      {
+        "encoder": "YG",
+        "detailed": "U D' R' D R U' R' D' R D",
+        "commutator": "D':[U,R' D R]",
+        "block": "Y",
+        "step": "D' R' D R"
+      },
+      {
+        "encoder": "NG",
+        "detailed": "U D R' D' R U' R' D R D'",
+        "commutator": "D:[U,R' D' R]",
+        "block": "N",
+        "step": "D R' D' R"
+      },
+      {
+        "encoder": "TG",
+        "detailed": "D R D' R' U' R D R' D' U",
+        "commutator": "D:[R D' R',U']",
+        "block": "T",
+        "step": "D R D' R'"
+      },
+      {
+        "encoder": "PG",
+        "detailed": "D' R D R' U' R D' R' D U",
+        "commutator": "D':[R D R',U']",
+        "block": "P",
+        "step": "D' R D R'"
+      },
+      {
+        "encoder": "AZ",
+        "detailed": "R' D' R U' R' D R U ",
+        "commutator": "[R' D' R,U']",
+        "block": "Z",
+        "step": "R' D' R"
+      },
+      {
+        "encoder": "AM",
+        "detailed": "R' D R U' R' D' R U",
+        "commutator": "[R' D R,U']",
+        "block": "M",
+        "step": "R' D R"
+      },
+      {
+        "encoder": "AS",
+        "detailed": "U' R D R' U' R D' R' U2",
+        "commutator": "U':[R D R',U']",
+        "block": "S",
+        "step": "R D R'"
+      },
+      {
+        "encoder": "AQ",
+        "detailed": "U' R D' R' U' R D R' U2",
+        "commutator": "U':[R D' R',U']",
+        "block": "Q",
+        "step": "R D' R'"
+      },
+      {
+        "encoder": "AY",
+        "detailed": "D' R' D R U' R' D' R D U",
+        "commutator": "D':[R' D R,U']",
+        "block": "Y",
+        "step": "D' R' D R"
+      },
+      {
+        "encoder": "AN",
+        "detailed": "D R' D' R U' R' D R D' U",
+        "commutator": "D:[R' D' R,U']",
+        "block": "N",
+        "step": "D R' D' R"
+      },
+      {
+        "encoder": "AT",
+        "detailed": "U' D R D' R' U' R D R' D' U2",
+        "commutator": "U' D:[R D' R',U']",
+        "block": "T",
+        "step": "D R D' R'"
+      },
+      {
+        "encoder": "AP",
+        "detailed": "U' D' R D R' U' R D' R' D U2",
+        "commutator": "U' D':[R D R',U']",
+        "block": "P",
+        "step": "D' R D R'"
+      },
+      {
+        "encoder": "ZA",
+        "detailed": "U' R' D' R U R' D R",
+        "commutator": "[U',R' D' R]",
+        "block": "Z",
+        "step": "R' D' R"
+      },
+      {
+        "encoder": "MA",
+        "detailed": "U' R' D R U R' D' R",
+        "commutator": "[U',R' D R]",
+        "block": "M",
+        "step": "R' D R"
+      },
+      {
+        "encoder": "SA",
+        "detailed": "U2 R D R' U R D' R' U",
+        "commutator": "U':[U',R D R']",
+        "block": "S",
+        "step": "R D R'"
+      },
+      {
+        "encoder": "QA",
+        "detailed": "U2 R D' R' U R D R' U",
+        "commutator": "U':[U',R D' R']",
+        "block": "Q",
+        "step": "R D' R'"
+      },
+      {
+        "encoder": "YA",
+        "detailed": "U' D' R' D R U R' D' R D",
+        "commutator": "D':[U',R' D R]",
+        "block": "Y",
+        "step": "D' R' D R"
+      },
+      {
+        "encoder": "NA",
+        "detailed": "U' D R' D' R U R' D R D'",
+        "commutator": "D:[U',R' D' R]",
+        "block": "N",
+        "step": "D R' D' R"
+      },
+      {
+        "encoder": "TA",
+        "detailed": "U2 D R D' R' U R D R' D' U",
+        "commutator": "U' D:[U',R D' R']",
+        "block": "T",
+        "step": "D R D' R'"
+      },
+      {
+        "encoder": "PA",
+        "detailed": "U2 D' R D R' U R D' R' D U",
+        "commutator": "U' D':[U',R D R']",
+        "block": "P",
+        "step": "D' R D R'"
+      },
+      {
+        "encoder": "DZ",
+        "detailed": "R' D' R U2 R' D R U2",
+        "commutator": "[R' D' R,U2]",
+        "block": "Z",
+        "step": "R' D' R"
+      },
+      {
+        "encoder": "DM",
+        "detailed": "R' D R U2 R' D' R U2",
+        "commutator": "[R' D R,U2]",
+        "block": "M",
+        "step": "R' D R"
+      },
+      {
+        "encoder": "DS",
+        "detailed": "U' R D R' U2 R D' R' U'",
+        "commutator": "U':[R D R',U2]",
+        "block": "S",
+        "step": "R D R'"
+      },
+      {
+        "encoder": "DQ",
+        "detailed": "U' R D' R' U2 R D R' U'",
+        "commutator": "U':[R D' R',U2]",
+        "block": "Q",
+        "step": "R D' R'"
+      },
+      {
+        "encoder": "DY",
+        "detailed": "D' R' D R U2 R' D' R D U2",
+        "commutator": "D':[R' D R,U2]",
+        "block": "Y",
+        "step": "D' R' D R"
+      },
+      {
+        "encoder": "DN",
+        "detailed": "D R' D' R U2 R' D R D' U2",
+        "commutator": "D:[R' D' R,U2]",
+        "block": "N",
+        "step": "D R' D' R"
+      },
+      {
+        "encoder": "DT",
+        "detailed": "U' D R D' R' U2 R D R' D' U'",
+        "commutator": "U' D:[R D' R',U2]",
+        "block": "T",
+        "step": "D R D' R'"
+      },
+      {
+        "encoder": "DP",
+        "detailed": "U' D' R D R' U2 R D' R' D U'",
+        "commutator": "U' D':[R D R',U2]",
+        "block": "P",
+        "step": "D' R D R'"
+      },
+      {
+        "encoder": "ZD",
+        "detailed": "U2 R' D' R U2 R' D R",
+        "commutator": "[U2,R' D' R]",
+        "block": "Z",
+        "step": "R' D' R"
+      },
+      {
+        "encoder": "MD",
+        "detailed": "U2 R' D R U2 R' D' R",
+        "commutator": "[U2,R' D R]",
+        "block": "M",
+        "step": "R' D R"
+      },
+      {
+        "encoder": "SD",
+        "detailed": "U R D R' U2 R D' R' U",
+        "commutator": "U':[U2,R D R']",
+        "block": "S",
+        "step": "R D R'"
+      },
+      {
+        "encoder": "QD",
+        "detailed": "U R D' R' U2 R D R' U",
+        "commutator": "U':[U2,R D' R']",
+        "block": "Q",
+        "step": "R D' R'"
+      },
+      {
+        "encoder": "YD",
+        "detailed": "U2 D' R' D R U2 R' D' R D",
+        "commutator": "D':[U2,R' D R]",
+        "block": "Y",
+        "step": "D' R' D R"
+      },
+      {
+        "encoder": "ND",
+        "detailed": "U2 D R' D' R U2 R' D R D'",
+        "commutator": "D:[U2,R' D' R]",
+        "block": "N",
+        "step": "D R' D' R"
+      },
+      {
+        "encoder": "TD",
+        "detailed": "U D R D' R' U2 R D R' D' U",
+        "commutator": "U' D:[U2,R D' R']",
+        "block": "T",
+        "step": "D R D' R'"
+      },
+      {
+        "encoder": "PD",
+        "detailed": "U D' R D R' U2 R D' R' D U",
+        "commutator": "U' D':[U2,R D R']",
+        "block": "P",
+        "step": "D' R D R'"
       }
     ],
     "all": {
       "R.F.R": [
         {
           "encoder": "IZ",
-          "commutator": "R'F'RU:[R' D' R,U2]",
-          "detailed": "R'F'RUR'D'RU2R'DRUR'FR",
-          "block": "Z",
-          "step": "R'F'R",
-          "possible": "[]"
+          "detailed": "R' F' R U R' D' R U2 R' D R U R' F R",
+          "commutator": "R' F' R U:[R' D' R,U2]",
+          "setup": "R'F'R",
+          "block": "Z"
         },
         {
           "encoder": "IA",
+          "detailed": "R' F' R U R' D R U2 R' D' R U R' F R",
           "commutator": "R' F' R U:[R' D R,U2]",
-          "detailed": "R'F'RUR'DRU2R'D'RUR'FR",
+          "setup": "R'F'R",
           "block": "M",
-          "step": "R'F'R",
-          "possible": "[]"
+          "possible": "U' R' R' D' R U2 R' D R U2 R U"
+        },
+        {
+          "encoder": "IS",
+          "detailed": "R' F' R R D R' U2 R D' R' U2 R' F R",
+          "commutator": "R' F' R:[R D R',U2]",
+          "setup": "R'F'R",
+          "block": "S",
+          "possible": "U R U' R' D' R U2 R' D R U' R' U'"
+        },
+        {
+          "encoder": "IB",
+          "detailed": "R' F' R U D R' D' R U2 R' D R D' U R' F R",
+          "commutator": "R' F' R U D:[R' D' R,U2]",
+          "setup": "R'F'R",
+          "block": "N",
+          "possible": "R D' R2 D R2 U' R2 D' R2 D R2 U R"
+        },
+        {
+          "encoder": "IT",
+          "detailed": "D R' F' R R D' R' U2 R D R' U2 R' F R D'",
+          "commutator": "D R' F' R:[R D' R',U2]",
+          "setup": "(IQ)",
+          "possible": "D U R U2 R D' R' U2 R D R' R' U' D'"
+        },
+        {
+          "encoder": "ZI",
+          "detailed": "R' F' R U' R' D' R U2 R' D R U' R' F R",
+          "commutator": "R' F' R U:[U2,R' D' R]",
+          "setup": "R'F'R",
+          "block": "Z"
+        },
+        {
+          "encoder": "AI",
+          "detailed": "R' F' R U' R' D R U2 R' D' R U' R' F R",
+          "commutator": "R' F' R U:[U2,R' D R]",
+          "setup": "R'F'R",
+          "block": "M",
+          "possible": "U' R' U2 R' D' R U2 R' D R R U"
+        },
+        {
+          "encoder": "SI",
+          "detailed": "R' F' R U2 R D R' U2 R D' R' R' F R",
+          "commutator": "R' F' R:[U2,R D R']",
+          "setup": "R'F'R",
+          "block": "S",
+          "possible": "U R U R' D' R U2 R' D R U R' U'"
+        },
+        {
+          "encoder": "BI",
+          "detailed": "R' F' R U' D R' D' R U2 R' D R D' U' R' F R",
+          "commutator": "R' F' R U D:[U2,R' D' R]",
+          "setup": "R'F'R",
+          "block": "N",
+          "possible": "R' U' R2 D' R2 D R2 U R2 D' R2 D R'"
+        },
+        {
+          "encoder": "TI",
+          "detailed": "D R' F' R U2 R D' R' U2 R D R' R' F R D'",
+          "commutator": "D R' F' R:[U2,R D' R']",
+          "setup": "(QI)",
+          "block": "",
+          "possible": "D U R R D' R' U2 R D R' U2 R' U' D'"
+        },
+        {
+          "encoder": ""
+        },
+        {
+          "encoder": "NS",
+          "detailed": "R' F' R R D R' U' R D' R' U R' F R",
+          "commutator": "R' F' R:[R D R',U']",
+          "setup": "R'F'R",
+          "block": "S"
+        },
+        {
+          "encoder": "NQ",
+          "detailed": "R' F' R R D' R' U' R D R' U R' F R",
+          "commutator": "R' F' R:[R D' R',U']",
+          "setup": "R'F'R",
+          "block": "Q"
+        },
+        {
+          "encoder": "NP",
+          "detailed": "R' F' R D' R D R' U' R D' R' D U R' F R",
+          "commutator": "R' F' R D':[R D R',U']",
+          "setup": "R'F'R",
+          "block": "T"
+        },
+        {
+          "encoder": "SN",
+          "detailed": "R' F' R U' R D R' U R D' R' R' F R",
+          "commutator": "R' F' R:[U',R D R']",
+          "setup": "R'F'R",
+          "block": "S"
+        },
+        {
+          "encoder": "QN",
+          "detailed": "R' F' R U' R D' R' U R D R' R' F R",
+          "commutator": "R' F' R:[U',R D' R']",
+          "setup": "R'F'R",
+          "block": "Q"
+        },
+        {
+          "encoder": "PN",
+          "detailed": "R' F' R U' D' R D R' U R D' R' D R' F R",
+          "commutator": "R' F' R D':[U',R D R']",
+          "setup": "R'F'R",
+          "block": "T"
+        },
+        {
+          "encoder": "CE",
+          "detailed": "R' F R U R' D R U R' D' R U2 R' F' R",
+          "commutator": "R' F R U:[R' D R,U]",
+          "setup": "R'FR",
+          "block": "M",
+          "possible": "R U' R' U' R' D' R U' R' D R U2 R U R'"
+        },
+        {
+          "encoder": "EC",
+          "detailed": "R' F R U2 R' D R U' R' D' R U' R' F' R",
+          "commutator": "R' F R U:[U,R' D R]",
+          "setup": "R'FR",
+          "block": "M",
+          "possible": "R U' R' U2 R' D' R U R' D R U R U R'"
+        },
+        {
+          "encoder": "CN",
+          "detailed": "R' F R U R' D R U2 R' D' R U R' F' R",
+          "commutator": "R' F R U:[R' D R,U2]",
+          "setup": "R'FR",
+          "block": "M",
+          "possible": "D R' U' D' R U R' D R U' R' U R D'"
+        },
+        {
+          "encoder": "NC",
+          "detailed": "R' F R U' R' D R U2 R' D' R U' R' F' R",
+          "commutator": "R' F R U:[U2,R' D R]",
+          "setup": "R'FR",
+          "block": "M",
+          "possible": "D R' U' R U R' D' R U' R' D U R D'"
+        },
+        {
+          "encoder": "BD",
+          "detailed": "R' F R U D R' D' R U R' D R D' U2 R' F' R",
+          "commutator": "R' F R U D:[R' D' R,U]",
+          "setup": "R'FR",
+          "block": "N"
+        },
+        {
+          "encoder": "DB",
+          "detailed": "R' F R U2 D R' D' R U' R' D R D' U' R' F' R",
+          "commutator": "R' F R U D:[U,R' D' R]",
+          "setup": "R'FR",
+          "block": "N"
+        },
+        {
+          "encoder": ""
+        },
+        {
+          "encoder": "CH",
+          "detailed": "R' F R U R' D R U' R' D' F' R",
+          "commutator": "R' F:[R U R',D]",
+          "setup": "R'F"
+        },
+        {
+          "encoder": "HC",
+          "detailed": "R' F D R U R' D' R U' R' F' R",
+          "commutator": "R' F:[D,R U R']",
+          "setup": "R'F",
+          "block": ""
+        },
+        {
+          "encoder": "NH",
+          "detailed": "R' F R U' R' D R U R' D' F' R",
+          "commutator": "R' F:[R U' R',D]",
+          "setup": "R'F"
+        },
+        {
+          "encoder": "HN",
+          "detailed": "R' F D R U' R' D' R U R' F' R",
+          "commutator": "R' F:[D,R U' R']",
+          "setup": "R'F",
+          "block": ""
+        },
+        {
+          "encoder": "EH",
+          "detailed": "R' F R U2 R' D R U2 R' D' F' R",
+          "commutator": "R' F:[R U2 R',D]",
+          "setup": "R'F",
+          "possible": "R D R D' R' U R D R' D' U' R'",
+          "������": "R D:[R D' R',U]",
+          "setup����": "R"
+        },
+        {
+          "encoder": "HE",
+          "detailed": "R' F D R U2 R' D' R U2 R' F' R",
+          "commutator": "R' F:[D,R U2 R']",
+          "setup": "R'F",
+          "block": "",
+          "possible": "R U D R D' R' U' R D R' D' R'"
+        },
+        {
+          "encoder": "WR",
+          "detailed": "U R' F R R D R' U2 R D' R' U2 R' F' R U'",
+          "commutator": "U R' F R:[R D R',U2]",
+          "setup": "UR'FR",
+          "block": "S",
+          "possible": "U' R' U R U R' D R U2 R' D' R U R' U' R U"
+        },
+        {
+          "encoder": "WP",
+          "detailed": "U R' F R R D' R' U2 R D R' U2 R' F' R U'",
+          "commutator": "U R' F R:[R D' R',U2]",
+          "setup": "UR'FR",
+          "block": "Q"
+        },
+        {
+          "encoder": "RW",
+          "detailed": "U R' F R U2 R D R' U2 R D' R' R' F' R U'",
+          "commutator": "U R' F R:[U2,R D R']",
+          "setup": "UR'FR",
+          "block": "S",
+          "possible": "U' R' U R U' R' D R U2 R' D' R U' R' U' R U"
+        },
+        {
+          "encoder": "PW",
+          "detailed": "U R' F R U2 R D' R' U2 R D R' R' F' R U'",
+          "commutator": "U R' F R:[U2,R D' R']",
+          "setup": "UR'FR",
+          "block": "Q"
+        },
+        {
+          "encoder": "CR",
+          "detailed": "U R' F R R D R' U R D' R' U' R' F' R U'",
+          "commutator": "U R' F R:[R D R',U]",
+          "setup": "UR'FR",
+          "block": "S",
+          "possible": "R B R' U R D R' U R D' R' U2 R B' R'"
+        },
+        {
+          "encoder": "CP",
+          "detailed": "U R' F R R D' R' U R D R' U' R' F' R U'",
+          "commutator": "U R' F R:[R D' R',U]",
+          "setup": "UR'FR",
+          "block": "Q",
+          "possible": "U2 R U R' U' R D' R' U R D U' R' U2"
+        },
+        {
+          "encoder": "RC",
+          "detailed": "U R' F R U R D R' U' R D' R' R' F' R U'",
+          "commutator": "U R' F R:[U,R D R']",
+          "setup": "UR'FR",
+          "block": "S",
+          "possible": "R B R' U2 R D R' U' R D' R' U' R B' R'"
+        },
+        {
+          "encoder": "PC",
+          "detailed": "U R' F R U R D' R' U' R D R' R' F' R U'",
+          "commutator": "U R' F R:[U,R D' R']",
+          "setup": "UR'FR",
+          "block": "Q",
+          "possible": "U2 R U D' R' U' R D R' U R U' R' U2"
+        },
+        {
+          "encoder": "FR",
+          "detailed": "U R' F R R D R' U' R D' R' U R' F' R U'",
+          "commutator": "U R' F R:[R D R',U']",
+          "setup": "UR'FR",
+          "block": "S"
+        },
+        {
+          "encoder": "FP",
+          "detailed": "U R' F R R D' R' U' R D R' U R' F' R U'",
+          "commutator": "U R' F R:[R D' R',U']",
+          "setup": "UR'FR",
+          "block": "Q",
+          "possible": "U' R' U' R D' R' U' R D R' U2 R U"
+        },
+        {
+          "encoder": "RF",
+          "detailed": "U R' F R U' R D R' U R D' R' R' F' R U'",
+          "commutator": "U R' F R:[U',R D R']",
+          "setup": "UR'FR",
+          "block": "S"
+        },
+        {
+          "encoder": "PF",
+          "detailed": "U R' F R U' R D' R' U R D R' R' F' R U'",
+          "commutator": "U R' F R:[U',R D' R']",
+          "setup": "UR'FR",
+          "block": "Q",
+          "possible": "U' R' U2 R D' R' U R D R' U R U"
+        },
+        {
+          "encoder": "FN",
+          "detailed": "U R' F' R U' R' D R U R' D' F R U'",
+          "commutator": "U R' F':[R U' R',D]",
+          "setup": "UR'F",
+          "possible": "R B' R' U D R' D' R U' R' D R D' R B R'"
+        },
+        {
+          "encoder": "FY",
+          "detailed": "U R' F R U R' D' R U' R' D F' R U'",
+          "commutator": "U R' F:[R U R',D']",
+          "setup": "UR'F",
+          "possible": "U' R' U' R D R' U' R D' R' U2 R U"
+        },
+        {
+          "encoder": "NF",
+          "detailed": "U R' F' D R U' R' D' R U R' F R U'",
+          "commutator": "U R' F':[D,R U' R']",
+          "setup": "UR'F",
+          "block": "",
+          "possible": "R B' R' D R' D' R U R' D R D' U' R B R'"
+        },
+        {
+          "encoder": "YF",
+          "detailed": "U R' F D' R U R' D R U' R' F' R U'",
+          "commutator": "U R' F:[D',R U R']",
+          "setup": "UR'F",
+          "block": "",
+          "possible": "U' R' U2 R D R' U R D' R' U R U"
+        },
+        {
+          "encoder": "ES",
+          "detailed": "U' R' F R U' R D R' U R D' R' R' F' R U",
+          "commutator": "U' R' F R:[U',R D R']",
+          "setup": "U'R'FR",
+          "possible": "R U D' R' D R U R' D' R D U2 R'"
+        },
+        {
+          "encoder": "SE",
+          "detailed": "U' R' F R R D R' U' R D' R' U R' F' R U",
+          "commutator": "U' R' F R:[R D R',U']",
+          "setup": "U'R'FR",
+          "block": "",
+          "possible": "R U2 D' R' D R U' R' D' R D U' R'"
+        },
+        {
+          "encoder": "EQ",
+          "detailed": "U' R' F R U' R D' R' U R D R' R' F' R U",
+          "commutator": "U' R' F R:[U',R D' R']",
+          "setup": "U'R'FR",
+          "possible": "R D' R D R' U R D' R' D U' R'"
+        },
+        {
+          "encoder": "QE",
+          "detailed": "U' R' F R R D' R' U' R D R' U R' F' R U",
+          "commutator": "U' R' F R:[R D' R',U']",
+          "setup": "U'R'FR",
+          "block": "",
+          "possible": "R U D' R D R' U' R D' R' D R'"
+        },
+        {
+          "encoder": "EZ",
+          "detailed": "U' R' F D' R U R' D R U' R' F' R U",
+          "commutator": "U' R' F:[D',R U R']",
+          "setup": "U'R'F",
+          "possible": "U R' U2 R D R' U R D' R' U R U'"
+        },
+        {
+          "encoder": "ZE",
+          "detailed": "U' R' F R U R' D' R U' R' D F' R U",
+          "commutator": "U' R' F:[R U R',D']",
+          "setup": "U'R'F",
+          "block": "",
+          "possible": "U R' U' R D R' U' R D' R' U2 R U'"
+        },
+        {
+          "encoder": "MT",
+          "detailed": "R F R' R' D R U' R' D' R U R F' R'",
+          "commutator": "R F R':[R' D R,U']",
+          "setup": "RFR'",
+          "block": "M",
+          "possible": "R' U' R U2 R' D R U2 R' D' U R"
+        },
+        {
+          "encoder": "TM",
+          "detailed": "R F R' U' R' D R U R' D' R R F' R'",
+          "commutator": "R F R':[U',R' D R]",
+          "setup": "RFR'",
+          "block": "M",
+          "possible": "R' U' D R U2 R' D' R U2 R' U R"
+        },
+        {
+          "encoder": "MR",
+          "detailed": "R F R' D R' D' R U' R' D R D' U R F' R'",
+          "commutator": "R F R' D:[R' D' R,U']",
+          "setup": "RFR'",
+          "block": "N",
+          "possible": "F' R U' R' D' R U R' D F"
+        },
+        {
+          "encoder": "RM",
+          "detailed": "R F R' U' D R' D' R U R' D R D' R F' R'",
+          "commutator": "R F R' D:[U',R' D' R]",
+          "setup": "RFR'",
+          "block": "N",
+          "possible": "F' D' R U' R' D R U R' F"
+        },
+        {
+          "encoder": "DW",
+          "detailed": "R F' R' U' R D R' U2 R D' R' U' R F R'",
+          "commutator": "R F' R' U':[R D R',U2]",
+          "setup": "RF'R'",
+          "block": "S"
+        },
+        {
+          "encoder": "WD",
+          "detailed": "R F' R' U R D R' U2 R D' R' U R F R'",
+          "commutator": "R F' R' U':[U2,R D R']",
+          "setup": "RF'R'",
+          "block": "S"
+        },
+        {
+          "encoder": "GW",
+          "detailed": "R F' R' U' R D R' U R D' F R'",
+          "commutator": "R F':[R' U' R,D]",
+          "setup": "RF'"
+        },
+        {
+          "encoder": "WG",
+          "detailed": "R F' D R' U' R D' R' U R F R'",
+          "commutator": "R F':[D,R' U' R]",
+          "setup": "RF'"
+        },
+        {
+          "encoder": "AW",
+          "detailed": "U' R F' D R' U' R D' R' U R F R' U",
+          "commutator": "U' R F':[D,R' U' R]",
+          "setup": "(GW)",
+          "possible": "R2 F R U R' D' R U2 R' D R U R' F' R2"
+        },
+        {
+          "encoder": "WA",
+          "detailed": "U' R F' R' U' R D R' U R D' F R' U",
+          "commutator": "U' R F':[R' U' R,D]",
+          "setup": "(WG)",
+          "block": "",
+          "possible": "R2 F R U' R' D' R U2 R' D R U' R' F' R2"
+        },
+        {
+          "encoder": "WX",
+          "detailed": "U' R' F' R U' R' D' R U R' D F R U",
+          "commutator": "U' R' F':[R U' R',D']",
+          "setup": "U'R'F'",
+          "possible": "R U' R' D R' D' R U2 R' D R D' U2 R U R'"
+        },
+        {
+          "encoder": "XW",
+          "detailed": "U' R' F' D' R U' R' D R U R' F R U",
+          "commutator": "U' R' F':[D',R U' R']",
+          "setup": "U'R'F'",
+          "block": "",
+          "possible": "R U' R' U2 D R' D' R U2 R' D R D' R U R'"
+        },
+        {
+          "encoder": "WE",
+          "detailed": "U' R' F' R U' R' D R U R' D' F R U",
+          "commutator": "U' R' F':[R U' R',D]",
+          "setup": "U'R'F'",
+          "possible": "R U2 D R' D' R U' R' D R D' U' R'"
+        },
+        {
+          "encoder": "EW",
+          "detailed": "U' R' F' D R U' R' D' R U R' F R U",
+          "commutator": "U' R' F':[D,R U' R']",
+          "setup": "U'R'F'",
+          "possible": "R U D R' D' R U R' D R D' U2 R'"
+        },
+        {
+          "encoder": "XE",
+          "detailed": "D' U' R' F' R U' R' D R U R' D' F R U D",
+          "commutator": "D' U' R' F':[R U' R',D]",
+          "setup": "(WE)",
+          "possible": "D' R U2 D R' D' R U' R' D R D' U' R' D"
+        },
+        {
+          "encoder": "EX",
+          "detailed": "D' U' R' F' D R U' R' D' R U R' F R U D",
+          "commutator": "D' U' R' F':[D,R U' R']",
+          "setup": "(EW)",
+          "possible": "D' R U D R' D' R U R' D R D' U2 R' D"
+        }
+      ],
+      "R.": [
+        {
+          "encoder": "BT",
+          "detailed": "R U R' D' R U2 R' D R U R'",
+          "commutator": "R U:[R' D' R,U2]",
+          "setup": "R",
+          "block": "Z"
+        },
+        {
+          "encoder": "BN",
+          "detailed": "R U R' D R U2 R' D' R U R'",
+          "commutator": "R U:[R' D R,U2]",
+          "setup": "R",
+          "block": "M"
+        },
+        {
+          "encoder": "BG",
+          "detailed": "R R D R' U2 R D' R' U2 R'",
+          "commutator": "R:[R D R',U2]",
+          "setup": "R",
+          "block": "S"
+        },
+        {
+          "encoder": "BO",
+          "detailed": "R R D' R' U2 R D R' U2 R'",
+          "commutator": "R:[R D' R',U2]",
+          "setup": "R",
+          "block": "Q"
+        },
+        {
+          "encoder": "BS",
+          "detailed": "R U D' R' D R U2 R' D' R D U R'",
+          "commutator": "R U D':[R' D R,U2]",
+          "setup": "R",
+          "block": "Y"
+        },
+        {
+          "encoder": "BW",
+          "detailed": "R U D R' D' R U2 R' D R D' U R'",
+          "commutator": "R U D:[R' D' R,U2]",
+          "setup": "R",
+          "block": "N"
+        },
+        {
+          "encoder": "BH",
+          "detailed": "R D R D' R' U2 R D R' D' U2 R'",
+          "commutator": "R D:[R D' R',U2]",
+          "setup": "R",
+          "block": "T",
+          "possible": "R' D R U' D' R' D R U2 R' D' R D U' R' D' R"
+        },
+        {
+          "encoder": "BQ",
+          "detailed": "R D' R D R' U2 R D' R' D U2 R'",
+          "commutator": "R D':[R D R',U2]",
+          "setup": "R",
+          "block": "P"
+        },
+        {
+          "encoder": "TB",
+          "detailed": "R U' R' D' R U2 R' D R U' R'",
+          "commutator": "R U:[U2,R' D' R]",
+          "setup": "R",
+          "block": "Z"
+        },
+        {
+          "encoder": "NB",
+          "detailed": "R U' R' D R U2 R' D' R U' R'",
+          "commutator": "R U:[U2,R' D R]",
+          "setup": "R",
+          "block": "M"
+        },
+        {
+          "encoder": "GB",
+          "detailed": "R U2 R D R' U2 R D' R' R' ",
+          "commutator": "R:[U2,R D R']",
+          "setup": "R",
+          "block": "S"
+        },
+        {
+          "encoder": "OB",
+          "detailed": "R U2 R D' R' U2 R D R' R' ",
+          "commutator": "R:[U2,R D' R']",
+          "setup": "R",
+          "block": "Q"
+        },
+        {
+          "encoder": "SB",
+          "detailed": "R U' D' R' D R U2 R' D' R D U' R'",
+          "commutator": "R U D':[U2,R' D R]",
+          "setup": "R",
+          "block": "Y"
+        },
+        {
+          "encoder": "WB",
+          "detailed": "R U' D R' D' R U2 R' D R D' U' R'",
+          "commutator": "R U D:[U2,R' D' R]",
+          "setup": "R",
+          "block": "N"
+        },
+        {
+          "encoder": "HB",
+          "detailed": "R U2 D R D' R' U2 R D R' D' R'",
+          "commutator": "R D:[U2,R D' R']",
+          "setup": "R",
+          "block": "T",
+          "possible": "R' D R U D' R' D R U2 R' D' R D U R' D' R"
+        },
+        {
+          "encoder": "QB",
+          "detailed": "R U2 D' R D R' U2 R D' R' D R'",
+          "commutator": "R D':[U2,R D R']",
+          "setup": "R",
+          "block": "P"
+        },
+        {
+          "encoder": "BZ",
+          "detailed": "D R U R' D' R U2 R' D R U R' D'",
+          "commutator": "D R U:[R' D' R,U2]",
+          "setup": "(BT)"
+        },
+        {
+          "encoder": "ZB",
+          "detailed": "D R U' R' D' R U2 R' D R U' R' D'",
+          "commutator": "D R U:[U2,R' D' R]",
+          "setup": "(TB)"
+        },
+        {
+          "encoder": "BR",
+          "detailed": "D R R D' R' U2 R D R' U2 R' D'",
+          "commutator": "D R:[R D' R',U2]",
+          "setup": "(BO)"
+        },
+        {
+          "encoder": "RB",
+          "detailed": "D R U2 R D' R' U2 R D R' R' D'",
+          "commutator": "D R:[U2,R D' R']",
+          "setup": "(OB)"
+        },
+        {
+          "encoder": "CD",
+          "detailed": "U' R D R D' R' U2 R D R' D' U2 R' U",
+          "commutator": "U' R D:[R D' R',U2]",
+          "setup": "U' R"
+        },
+        {
+          "encoder": "DC",
+          "detailed": "U' R U2 D R D' R' U2 R D R' D' R' U",
+          "commutator": "U' R D:[U2,R D' R']",
+          "setup": "U' R"
+        },
+        {
+          "encoder": "ET",
+          "detailed": "R U R' D' R U R' D R U2 R'",
+          "commutator": "R U:[R' D' R,U]",
+          "setup": "R",
+          "block": "Z"
+        },
+        {
+          "encoder": "EN",
+          "detailed": "R U R' D R U R' D' R U2 R'",
+          "commutator": "R U:[R' D R,U]",
+          "setup": "R",
+          "block": "M",
+          "possible": "R' F R U2 R' D R U R' D' R U R' F' R"
+        },
+        {
+          "encoder": "EG",
+          "detailed": "R R D R' U R D' R' U' R'",
+          "commutator": "R:[R D R',U]",
+          "setup": "R",
+          "block": "S"
+        },
+        {
+          "encoder": "EO",
+          "detailed": "R R D' R' U R D R' U' R'",
+          "commutator": "R:[R D' R',U]",
+          "setup": "R",
+          "block": "Q"
+        },
+        {
+          "encoder": "ER",
+          "detailed": "D R R D' R' U R D R' U' R' D'",
+          "commutator": "D R:[R D' R',U]",
+          "setup": "(EO)",
+          "possible": "U R' U' R U R D R' U' R D' R' R' U R U'"
+        },
+        {
+          "encoder": "TE",
+          "detailed": "R U2 R' D' R U' R' D R U' R'",
+          "commutator": "R U:[U,R' D' R]",
+          "setup": "R",
+          "block": "Z"
+        },
+        {
+          "encoder": "NE",
+          "detailed": "R U2 R' D R U' R' D' R U' R'",
+          "commutator": "R U:[U,R' D R]",
+          "setup": "R",
+          "block": "M",
+          "possible": "R' F R U' R' D R U' R' D' R U2 R' F' R"
+        },
+        {
+          "encoder": "GE",
+          "detailed": "R U R D R' U' R D' R' R' ",
+          "commutator": "R:[U,R D R']",
+          "setup": "R",
+          "block": "S"
+        },
+        {
+          "encoder": "OE",
+          "detailed": "R U R D' R' U' R D R' R' ",
+          "commutator": "R:[U,R D' R']",
+          "setup": "R",
+          "block": "Q"
+        },
+        {
+          "encoder": "RE",
+          "detailed": "D R U R D' R' U' R D R' R' D'",
+          "commutator": "D R:[U,R D' R']",
+          "setup": "(OE)",
+          "possible": "U R' U' R R D R' U R D' R' U' R' U R U'"
+        },
+        {
+          "encoder": "ZO",
+          "detailed": "R R D' R' U' R D R' U R'",
+          "commutator": "R:[R D' R',U']",
+          "setup": "R",
+          "block": "Q"
+        },
+        {
+          "encoder": "ZW",
+          "detailed": "R U D R' D' R U' R' D R D' R'",
+          "commutator": "R D:[U,R' D' R]",
+          "setup": "R",
+          "block": "N",
+          "possible": "R F' R' U' R D R' U' R D' R' U2 R F R'"
+        },
+        {
+          "encoder": "ZQ",
+          "detailed": "R D' R D R' U' R D' R' D U R'",
+          "commutator": "R D':[R D R',U']",
+          "setup": "R",
+          "block": "P",
+          "possible": "R U R' D2 R U' R' D2 "
+        },
+        {
+          "encoder": "OZ",
+          "detailed": "R U' R D' R' U R D R' R' ",
+          "commutator": "R:[U',R D' R']",
+          "setup": "R",
+          "block": "Q"
+        },
+        {
+          "encoder": "WZ",
+          "detailed": "R D R' D' R U R' D R D' U' R'",
+          "commutator": "R D:[R' D' R,U]",
+          "setup": "R",
+          "block": "N",
+          "possible": "R F' R' U2 R D R' U R D' R' U R F R'"
+        },
+        {
+          "encoder": "QZ",
+          "detailed": "R U' D' R D R' U R D' R' D R'",
+          "commutator": "R D':[U',R D R']",
+          "setup": "R",
+          "block": "P",
+          "possible": "D2 R U R' D2 R U' R' "
+        },
+        {
+          "encoder": "NR",
+          "detailed": "D R R D' R' U' R D R' U R' D'",
+          "commutator": "D R:[R D' R',U']",
+          "setup": "(ZO)",
+          "possible": "U R' U' R U2 R' D R U' R' D' R U' R' U R U'"
+        },
+        {
+          "encoder": "RN",
+          "detailed": "D R U' R D' R' U R D R' R' D'",
+          "commutator": "D R:[U',R D' R']",
+          "setup": "(OZ)",
+          "possible": "U R' U' R U R' D R U R' D' R U2 R' U R U'"
+        },
+        {
+          "encoder": "NT",
+          "detailed": "D R D' R D R' U' R D' R' D U R' D'",
+          "commutator": "D R D':[R D R',U']",
+          "setup": "(ZQ)",
+          "possible": "D R U R' D2 R U' R' D"
+        },
+        {
+          "encoder": "TN",
+          "detailed": "D R U' D' R D R' U R D' R' D R' D'",
+          "commutator": "D R D':[U',R D R']",
+          "setup": "(QZ)",
+          "possible": "D' R U R' D2 R U' R' D'"
+        },
+        {
+          "encoder": "CF",
+          "detailed": "R' U' R' D' R U' R' D R U2 R",
+          "commutator": "R' U':[R' D' R,U']",
+          "setup": "R'",
+          "block": "Z",
+          "possible": "R B R' U R D' R' U R D R' U2 R B' R'"
+        },
+        {
+          "encoder": "CS",
+          "detailed": "R' U' R' D' R U2 R' D R U' R",
+          "commutator": "R' U':[R' D' R,U2]",
+          "setup": "R'",
+          "block": "Z",
+          "possible": "U' R U' D R' U R D' R' U' R U R' U"
+        },
+        {
+          "encoder": "CG",
+          "detailed": "R' U' R' D' R U R' D R R ",
+          "commutator": "R':[U',R' D' R]",
+          "setup": "R'",
+          "block": "Z"
+        },
+        {
+          "encoder": "FS",
+          "detailed": "R' U2 R' D' R U' R' D R U' R",
+          "commutator": "R' U:[U,R' D' R]",
+          "setup": "R'",
+          "block": "Z",
+          "possible": "R B' D R' U' R D' R' U R B R'"
+        },
+        {
+          "encoder": "FG",
+          "detailed": "R' U2 R' D' R U2 R' D R R ",
+          "commutator": "R':[U2,R' D' R]",
+          "setup": "R'",
+          "block": "Z"
+        },
+        {
+          "encoder": "FC",
+          "detailed": "R' U2 R' D' R U R' D R U R",
+          "commutator": "R' U':[U',R' D' R]",
+          "setup": "R'",
+          "block": "Z",
+          "possible": "R B R' U2 R D' R' U' R D R' U' R B' R'"
+        },
+        {
+          "encoder": "SC",
+          "detailed": "R' U R' D' R U2 R' D R U R",
+          "commutator": "R' U':[U2,R' D' R]",
+          "setup": "R'",
+          "block": "Z",
+          "possible": "U' R U' R' U R D R' U' R D' U R' U"
+        },
+        {
+          "encoder": "GC",
+          "detailed": "R' R' D' R U' R' D R U R",
+          "commutator": "R':[R' D' R,U']",
+          "setup": "R'",
+          "block": "Z"
+        },
+        {
+          "encoder": "SF",
+          "detailed": "R' U R' D' R U R' D R U2 R",
+          "commutator": "R' U:[R' D' R,U]",
+          "setup": "R'",
+          "block": "Z",
+          "possible": "R B' R' U' R D R' U R D' B R'"
+        },
+        {
+          "encoder": "GF",
+          "detailed": "R' R' D' R U2 R' D R U2 R",
+          "commutator": "R':[R' D' R,U2]",
+          "setup": "R'",
+          "block": "Z"
+        },
+        {
+          "encoder": "AH",
+          "detailed": "R' U' D' R' D R U R' D' R D R",
+          "commutator": "R' D':[U',R' D R]",
+          "setup": "R'",
+          "block": "Y",
+          "possible": "R B' D' R' U2 R D R' U2 R B R'"
+        },
+        {
+          "encoder": "HA",
+          "detailed": "R' D' R' D R U' R' D' R D U R",
+          "commutator": "R' D':[R' D R,U']",
+          "setup": "R'",
+          "block": "Y",
+          "possible": "R B' R' U2 R D' R' U2 R D B R'"
+        },
+        {
+          "encoder": "DH",
+          "detailed": "R' U2 D' R' D R U2 R' D' R D R",
+          "commutator": "R' D':[U2,R' D R]",
+          "setup": "R'",
+          "block": "Y",
+          "possible": "R D' R' U' D R D' R' U2 R D R' D' U' R D R'"
+        },
+        {
+          "encoder": "HD",
+          "detailed": "R' D' R' D R U2 R' D' R D U2 R",
+          "commutator": "R' D':[R' D R,U2]",
+          "setup": "R'",
+          "block": "Y",
+          "possible": "R D' R' U D R D' R' U2 R D R' D' U R D R'"
+        }
+      ],
+      "R.U": [
+        {
+          "encoder": "NZ",
+          "detailed": "D R U R' D' R U' R' ",
+          "commutator": "[D,R U R']",
+          "block": "DFR"
+        },
+        {
+          "encoder": "ZN",
+          "detailed": "R U R' D R U' R' D' ",
+          "commutator": "[R U R',D]",
+          "setup": "",
+          "block": "DFR"
+        },
+        {
+          "encoder": "TZ",
+          "detailed": "D' R U R' D R U' R' ",
+          "commutator": "[D',R U R']",
+          "block": "DFR"
+        },
+        {
+          "encoder": "ZT",
+          "detailed": "R U R' D' R U' R' D ",
+          "commutator": "[R U R',D']",
+          "setup": "",
+          "block": "DFR"
+        },
+        {
+          "encoder": "MY",
+          "detailed": "U D R U' R' D' R U R' U'",
+          "commutator": "U:[D,R U' R']",
+          "block": "DFR"
+        },
+        {
+          "encoder": "YM",
+          "detailed": "U R U' R' D R U R' D' U'",
+          "commutator": "U:[R U' R',D]",
+          "setup": "",
+          "block": "DFR"
+        },
+        {
+          "encoder": "SY",
+          "detailed": "U D' R U' R' D R U R' U'",
+          "commutator": "U:[D',R U' R']",
+          "block": "DFR"
+        },
+        {
+          "encoder": "YS",
+          "detailed": "U R U' R' D' R U R' D U'",
+          "commutator": "U:[R U' R',D']",
+          "setup": "",
+          "block": "DFR"
+        },
+        {
+          "encoder": "PS",
+          "detailed": "U' D' R' U' R D R' U R U",
+          "commutator": "U':[D',R' U' R]",
+          "block": "DBR",
+          "possible": "U' R B R' U' R D R' U R D' B' R' U"
+        },
+        {
+          "encoder": "SP",
+          "detailed": "U' R' U' R D' R' U R D U",
+          "commutator": "U':[R' U' R,D']",
+          "setup": "",
+          "block": "DBR",
+          "possible": "U' R B D R' U' R D' R' U R B' R' U"
+        },
+        {
+          "encoder": "QT",
+          "detailed": "U D' R' U2 R D R' U2 R U'",
+          "commutator": "U:[D',R' U2 R]",
+          "block": "DBR",
+          "possible": "D2 R U R' D R U' R' D"
+        },
+        {
+          "encoder": "TQ",
+          "detailed": "U R' U2 R D' R' U2 R D U'",
+          "commutator": "U:[R' U2 R,D']",
+          "setup": "",
+          "block": "DBR",
+          "possible": "D' R U R' D' R U' R' D2"
+        },
+        {
+          "encoder": "CM",
+          "detailed": "R' U' D R U R' D' R U' R' U R",
+          "commutator": "R' U':[D,R U R']",
+          "setup": "R' U'",
+          "block": "DFR"
+        },
+        {
+          "encoder": "CZ",
+          "detailed": "R' U' D' R U R' D R U' R' U R",
+          "commutator": "R' U':[D',R U R']",
+          "setup": "R' U'",
+          "block": "DFR"
+        },
+        {
+          "encoder": "MC",
+          "detailed": "R' U' R U R' D R U' R' D' U R",
+          "commutator": "R' U':[R U R',D]",
+          "setup": "R' U'",
+          "block": "DFR"
+        },
+        {
+          "encoder": "ZC",
+          "detailed": "R' U' R U R' D' R U' R' D U R",
+          "commutator": "R' U':[R U R',D']",
+          "setup": "R' U'",
+          "block": "DFR"
+        },
+        {
+          "encoder": "XH",
+          "detailed": "U R' U' D' R U R' D R U' R' U R U'",
+          "commutator": "U R' U':[D',R U R']",
+          "setup": "U R' U'",
+          "block": "DFR"
+        },
+        {
+          "encoder": "HX",
+          "detailed": "U R' U' R U R' D' R U' R' D U R U'",
+          "commutator": "U R' U':[R U R',D']",
+          "setup": "U R' U'",
+          "block": "DFR"
+        },
+        {
+          "encoder": "HM",
+          "detailed": "R' U D R U' R' D' R U R' U' R",
+          "commutator": "R' U:[D,R U' R']",
+          "setup": "R' U ",
+          "block": "DFR"
+        },
+        {
+          "encoder": "HZ",
+          "detailed": "R' U D' R U' R' D R U R' U' R",
+          "commutator": "R' U:[D',R U' R']",
+          "setup": "R' U ",
+          "block": "DFR"
+        },
+        {
+          "encoder": "HY",
+          "detailed": "D' R' U D R U' R' D' R U R' U' R D",
+          "commutator": "D' R' U:[D,R U' R']",
+          "setup": "D' R' U",
+          "block": "DFR"
+        },
+        {
+          "encoder": "MH",
+          "detailed": "R' U R U' R' D R U R' D' U' R",
+          "commutator": "R' U:[R U' R',D]",
+          "setup": "R' U ",
+          "block": "DFR"
+        },
+        {
+          "encoder": "ZH",
+          "detailed": "R' U R U' R' D' R U R' D U' R",
+          "commutator": "R' U:[R U' R',D']",
+          "setup": "R' U ",
+          "block": "DFR"
+        },
+        {
+          "encoder": "YH",
+          "detailed": "D' R' U R U' R' D R U R' D' U' R D",
+          "commutator": "D' R' U:[R U' R',D]",
+          "setup": "D' R' U",
+          "block": "DFR"
+        },
+        {
+          "encoder": ""
+        },
+        {
+          "encoder": "SM",
+          "detailed": "R' U D R U R' D' R U' R' U' R",
+          "commutator": "R' U:[D,R U R']",
+          "setup": "R' U ",
+          "block": "DFR"
+        },
+        {
+          "encoder": "MS",
+          "detailed": "R' U R U R' D R U' R' D' U' R",
+          "commutator": "R' U:[R U R',D]",
+          "setup": "R' U ",
+          "block": "DFR"
+        },
+        {
+          "encoder": "PY",
+          "detailed": "D' R' U D R U R' D' R U' R' U' R D",
+          "commutator": "D' R' U:[D,R U R']",
+          "setup": "(SM)",
+          "block": "DFR",
+          "possible": "U D2 R U' R' D2 R U R' U'"
+        },
+        {
+          "encoder": "YP",
+          "detailed": "D' R' U R U R' D R U' R' D' U' R D",
+          "commutator": "D' R' U:[R U R',D]",
+          "setup": "(MS)",
+          "block": "DFR",
+          "possible": "U R U' R' D2 R U R' D2 U'"
+        },
+        {
+          "encoder": "HT",
+          "detailed": "R U' R' U R D R' U' R D' U R'",
+          "commutator": "R U':[R' U R,D]",
+          "setup": "R U'",
+          "block": "DBR"
+        },
+        {
+          "encoder": "HO",
+          "detailed": "R U' R' U R D' R' U' R D U R'",
+          "commutator": "R U':[R' U R,D']",
+          "setup": "R U'",
+          "block": "DBR"
+        },
+        {
+          "encoder": "TH",
+          "detailed": "R U' D R' U R D' R' U' R U R'",
+          "commutator": "R U':[D,R' U R]",
+          "setup": "R U'",
+          "block": "DBR"
+        },
+        {
+          "encoder": "OH",
+          "detailed": "R U' D' R' U R D R' U' R U R'",
+          "commutator": "R U':[D',R' U R]",
+          "setup": "R U'",
+          "block": "DBR"
+        },
+        {
+          "encoder": ""
+        },
+        {
+          "encoder": "HR",
+          "detailed": "D R U' R' U R D' R' U' R D U R' D'",
+          "commutator": "D R U':[R' U R,D']",
+          "setup": "(HO)",
+          "block": "DBR",
+          "possible": "R U' R' U D R D' R' U' R D R' D' R U R'"
+        },
+        {
+          "encoder": "RH",
+          "detailed": "D R U' D' R' U R D R' U' R U R' D'",
+          "commutator": "D R U':[D',R' U R]",
+          "setup": "(OH)",
+          "block": "DBR",
+          "possible": "R U' R' D R D' R' U R D R' D' U' R U R'"
+        },
+        {
+          "encoder": "CW",
+          "detailed": "U' R' U R U' R' D R U R' D' U' R U",
+          "commutator": "U' R' U:[R U' R',D]",
+          "setup": "U' R' U",
+          "block": "DFR"
+        },
+        {
+          "encoder": "CY",
+          "detailed": "U' R' U R U' R' D' R U R' D U' R U",
+          "commutator": "U' R' U:[R U' R',D']",
+          "setup": "U' R' U",
+          "block": "DFR",
+          "possible": "F D R U R' D' R U' R' F'"
+        },
+        {
+          "encoder": "WC",
+          "detailed": "U' R' U D R U' R' D' R U R' U' R U",
+          "commutator": "U' R' U:[D,R U' R']",
+          "setup": "U' R' U",
+          "block": "DFR"
+        },
+        {
+          "encoder": "YC",
+          "detailed": "U' R' U D' R U' R' D R U R' U' R U",
+          "commutator": "U' R' U:[D',R U' R']",
+          "setup": "U' R' U",
+          "block": "DFR",
+          "possible": "F R U R' D R U' R' D' F'"
+        },
+        {
+          "encoder": "HS",
+          "detailed": "U' R U D R' U' R D' R' U R U' R' U",
+          "commutator": "U' R U:[D,R' U' R]",
+          "setup": "U' R U",
+          "block": "DBR"
+        },
+        {
+          "encoder": "SH",
+          "detailed": "U' R U R' U' R D R' U R D' U' R' U",
+          "commutator": "U' R U:[R' U' R,D]",
+          "setup": "U' R U",
+          "block": "DBR"
+        },
+        {
+          "encoder": "YQ",
+          "detailed": "U' R U D' R' U2 R D R' U2 R U' R' U",
+          "commutator": "U' R U:[D',R' U2 R]",
+          "setup": "U' R U",
+          "block": "DBR",
+          "possible": "U R U2 R D' R' U R D R' U R' U'"
+        },
+        {
+          "encoder": "QY",
+          "detailed": "U' R U R' U2 R D' R' U2 R D U' R' U",
+          "commutator": "U' R U:[R' U2 R,D']",
+          "setup": "U' R U",
+          "block": "DBR",
+          "possible": "U R U' R D' R' U' R D R' U2 R' U'"
+        }
+      ],
+      "R.U.R": [
+        {
+          "encoder": "XC",
+          "detailed": "R U' R' U2 R' D' R U2 R' D R R U R'",
+          "commutator": "R U' R':[U2,R' D' R]",
+          "setup": "RU'R'",
+          "block": "Z"
+        },
+        {
+          "encoder": "XN",
+          "detailed": "R U' R' U2 R' D R U2 R' D' R R U R'",
+          "commutator": "R U' R':[U2,R' D R]",
+          "setup": "RU'R'",
+          "block": "M"
+        },
+        {
+          "encoder": "XT",
+          "detailed": "R U' R' U R D R' U2 R D' R' U R U R'",
+          "commutator": "R U' R' U:[R D R',U2]",
+          "setup": "RU'R'",
+          "block": "S"
+        },
+        {
+          "encoder": "XO",
+          "detailed": "R U' R' U R D' R' U2 R D R' U R U R'",
+          "commutator": "R U' R' U:[R D' R',U2]",
+          "setup": "RU'R'",
+          "block": "Q"
+        },
+        {
+          "encoder": "XB",
+          "detailed": "R U' R' U2 D' R' D R U2 R' D' R D R U R'",
+          "commutator": "R U' R' D':[U2,R' D R]",
+          "setup": "RU'R'",
+          "block": "Y",
+          "possible": "D' R U' D R' D' R U2 R' D R D' U' R' D"
+        },
+        {
+          "encoder": "XR",
+          "detailed": "R U' R' U D R D' R' U2 R D R' D' U R U R'",
+          "commutator": "R U' R' U D:[R D' R',U2]",
+          "setup": "RU'R'",
+          "block": "T",
+          "possible": "F' R U' R' D' R U2 R' D R U' R' F"
+        },
+        {
+          "encoder": "XQ",
+          "detailed": "R U' R' U D' R D R' U2 R D' R' D U R U R'",
+          "commutator": "R U' R' U D':[R D R',U2]",
+          "setup": "RU'R'",
+          "block": "P"
+        },
+        {
+          "encoder": "XS",
+          "detailed": "R U' D' R' U2 R' D R U2 R' D' R R D U R'",
+          "commutator": "R U' D' R':[U2,R' D R]",
+          "setup": "RU'D'R'",
+          "block": "M"
+        },
+        {
+          "encoder": "CX",
+          "detailed": "R U' R' R' D' R U2 R' D R U2 R U R'",
+          "commutator": "R U' R':[R' D' R,U2]",
+          "setup": "RU'R'",
+          "block": "Z"
+        },
+        {
+          "encoder": "NX",
+          "detailed": "R U' R' R' D R U2 R' D' R U2 R U R'",
+          "commutator": "R U' R':[R' D R,U2]",
+          "setup": "RU'R'",
+          "block": "M"
+        },
+        {
+          "encoder": "TX",
+          "detailed": "R U' R' U' R D R' U2 R D' R' U' R U R'",
+          "commutator": "R U' R' U:[U2,R D R']",
+          "setup": "RU'R'",
+          "block": "S"
+        },
+        {
+          "encoder": "OX",
+          "detailed": "R U' R' U' R D' R' U2 R D R' U' R U R'",
+          "commutator": "R U' R' U:[U2,R D' R']",
+          "setup": "RU'R'",
+          "block": "Q"
+        },
+        {
+          "encoder": "BX",
+          "detailed": "R U' R' D' R' D R U2 R' D' R D U2 R U R'",
+          "commutator": "R U' R' D':[R' D R,U2]",
+          "setup": "RU'R'",
+          "block": "Y",
+          "possible": "D' R U D R' D' R U2 R' D R D' U R' D"
+        },
+        {
+          "encoder": "RX",
+          "detailed": "R U' R' U' D R D' R' U2 R D R' D' U' R U R'",
+          "commutator": "R U' R' U D:[U2,R D' R']",
+          "setup": "RU'R'",
+          "block": "T",
+          "possible": "F' R U R' D' R U2 R' D R U R' F"
+        },
+        {
+          "encoder": "QX",
+          "detailed": "R U' R' U' D' R D R' U2 R D' R' D U' R U R'",
+          "commutator": "R U' R' U D':[U2,R D R']",
+          "setup": "RU'R'",
+          "block": "P"
+        },
+        {
+          "encoder": "SX",
+          "detailed": "R U' D' R' R' D R U2 R' D' R U2 R D U R'",
+          "commutator": "R U' D' R':[R' D R,U2]",
+          "setup": "RU'D'R'",
+          "block": "M"
+        },
+        {
+          "encoder": "RZ",
+          "detailed": "D' R U' R' U2 R' D R U2 R' D' R R U R' D",
+          "commutator": "D' R U' R':[U2,R' D R]",
+          "setup": "(XN)"
+        },
+        {
+          "encoder": "ZR",
+          "detailed": "D' R U' R' R' D R U2 R' D' R U2 R U R' D",
+          "commutator": "D' R U' R':[R' D R,U2]",
+          "setup": "(NX)",
+          "block": ""
+        },
+        {
+          "encoder": "WQ",
+          "detailed": "D R U' R' U2 R' D R U2 R' D' R R U R' D'",
+          "commutator": "D R U' R':[U2,R' D R]",
+          "setup": "(XN)",
+          "possible": "U' R' F' R U' R' D2 R U R' D2 F R U"
+        },
+        {
+          "encoder": "QW",
+          "detailed": "D R U' R' R' D R U2 R' D' R U2 R U R' D'",
+          "commutator": "D R U' R':[R' D R,U2]",
+          "setup": "(NX)",
+          "possible": "U' R' F' D2 R U' R' D2 R U R' F R U"
+        },
+        {
+          "encoder": "RP",
+          "detailed": "U' R' U R U2 R D' R' U2 R D R' R' U' R U",
+          "commutator": "U' R' U R:[U2,R D' R']",
+          "setup": "U'R'UR",
+          "block": "Q"
+        },
+        {
+          "encoder": "PR",
+          "detailed": "U' R' U R R D' R' U2 R D R' U2 R' U' R U",
+          "commutator": "U' R' U R:[R D' R',U2]",
+          "setup": "U'R'UR",
+          "block": "Q"
+        },
+        {
+          "encoder": "QC",
+          "detailed": "R' U' R R D' R' U' R D R' U R' U R",
+          "commutator": "R' U' R:[R D' R',U']",
+          "setup": "R'U'R",
+          "block": "Q"
+        },
+        {
+          "encoder": "CQ",
+          "detailed": "R' U' R U' R D' R' U R D R' R' U R",
+          "commutator": "R' U' R:[U',R D' R']",
+          "setup": "R'U'R",
+          "block": "Q"
+        },
+        {
+          "encoder": "TC",
+          "detailed": "D R' U' R R D' R' U' R D R' U R' U R D'",
+          "commutator": "D R' U' R:[R D' R',U']",
+          "setup": "(QC)",
+          "block": "",
+          "possible": "F R U R' D' R U' R' D F'"
+        },
+        {
+          "encoder": "CT",
+          "detailed": "D R' U' R U' R D' R' U R D R' R' U R D'",
+          "commutator": "D R' U' R:[U',R D' R']",
+          "setup": "(CQ)",
+          "possible": "F D' R U R' D R U' R' F'"
+        },
+        {
+          "encoder": "QS",
+          "detailed": "R' U R R D' R' U' R D R' U R' U' R",
+          "commutator": "R' U R:[R D' R',U']",
+          "setup": "R'UR",
+          "block": "Q",
+          "possible": "R B' D R' U R D' R' U' R B R'"
+        },
+        {
+          "encoder": "SQ",
+          "detailed": "R' U R U' R D' R' U R D R' R' U' R",
+          "commutator": "R' U R:[U',R D' R']",
+          "setup": "R'UR",
+          "block": "Q",
+          "possible": "R B' R' U R D R' U' R D' B R'"
+        },
+        {
+          "encoder": "TY",
+          "detailed": "D R' U R R D' R' U' R D R' U R' U' R D'",
+          "commutator": "D R' U R:[R D' R',U']",
+          "setup": "(QS)",
+          "block": ""
+        },
+        {
+          "encoder": "YT",
+          "detailed": "D R' U R U' R D' R' U R D R' R' U' R D'",
+          "commutator": "D R' U R:[U',R D' R']",
+          "setup": "(SQ)"
+        },
+        {
+          "encoder": ""
+        },
+        {
+          "encoder": "MZ",
+          "detailed": "U' R U' R' R' D R U R' D' R U' R U R' U",
+          "commutator": "U' R U' R':[R' D R,U]",
+          "setup": "U'RU'R'",
+          "block": "Z"
+        },
+        {
+          "encoder": "ZM",
+          "detailed": "U' R U' R' U R' D R U' R' D' R R U R' U",
+          "commutator": "U' R U' R':[U,R' D R]",
+          "setup": "U'RU'R'",
+          "block": "Z"
+        },
+        {
+          "encoder": "EY",
+          "detailed": "R U R' R' D' R U' R' D R U R U' R'",
+          "commutator": "R U R':[R' D' R,U']",
+          "setup": "RUR'",
+          "block": "Z"
+        },
+        {
+          "encoder": "YE",
+          "detailed": "R U R' U' R' D' R U R' D R R U' R'",
+          "commutator": "R U R':[U',R' D' R]",
+          "setup": "RUR'",
+          "block": "Z"
+        },
+        {
+          "encoder": "AE",
+          "detailed": "R U R' U2 R' D' R U2 R' D R R U' R'",
+          "commutator": "R U R':[U2,R' D' R]",
+          "setup": "RUR'",
+          "block": "Z",
+          "possible": "U' R R D R' U2 R D' R' U2 R' U"
+        },
+        {
+          "encoder": "EA",
+          "detailed": "R U R' R' D' R U2 R' D R U2 R U' R'",
+          "commutator": "R U R':[R' D' R,U2]",
+          "setup": "RUR'",
+          "block": "Z",
+          "possible": "U' R U2 R D R' U2 R D' R' R' U"
+        },
+        {
+          "encoder": ""
+        },
+        {
+          "encoder": "BF",
+          "detailed": "R U R' U2 D' R' D R U2 R' D' R D R U' R'",
+          "commutator": "R U R' D':[U2,R' D R]",
+          "setup": "RUR'",
+          "block": "Y"
+        },
+        {
+          "encoder": "FB",
+          "detailed": "R U R' D' R' D R U2 R' D' R D U2 R U' R'",
+          "commutator": "R U R' D':[R' D R,U2]",
+          "setup": "RUR'",
+          "block": "Y"
+        },
+        {
+          "encoder": "BE",
+          "detailed": "U R' U' R R D R' U2 R D' R' U2 R' U R U'",
+          "commutator": "U R' U' R:[R D R',U2]",
+          "setup": "UR'U'R",
+          "block": "S"
+        },
+        {
+          "encoder": "EB",
+          "detailed": "U R' U' R U2 R D R' U2 R D' R' R' U R U'",
+          "commutator": "U R' U' R:[U2,R D R']",
+          "setup": "UR'U'R",
+          "block": "S"
+        },
+        {
+          "encoder": "FT",
+          "detailed": "U' R' U' R R D R' U R D' R' U' R' U R U",
+          "commutator": "U' R' U' R:[R D R',U]",
+          "setup": "U'R'U'R",
+          "block": "S",
+          "possible": "R B' R' D R D' R' U' R D R' D' U R B R'"
+        },
+        {
+          "encoder": "TF",
+          "detailed": "U' R' U' R U R D R' U' R D' R' R' U R U",
+          "commutator": "U' R' U' R:[U,R D R']",
+          "setup": "U'R'U'R",
+          "block": "S",
+          "possible": "R B' R' U' D R D' R' U R D R' D' R B R'"
+        }
+      ],
+      "U.R": [
+        {
+          "encoder": "FA",
+          "detailed": "U' R' R' D' R U' R' D R U R U",
+          "commutator": "U' R':[R' D' R,U']",
+          "setup": "U' R'",
+          "block": "Z",
+          "possible": "R' U R U R D R' U2 R D' R' U R' U' R"
+        },
+        {
+          "encoder": "FW",
+          "detailed": "U' R' R' D R U' R' D' R U R U",
+          "commutator": "U' R':[R' D R,U']",
+          "setup": "U' R'",
+          "block": "M",
+          "possible": "U' R' U R U' R' D R U' R' D' R U2 R' U' R U"
+        },
+        {
+          "encoder": "FX",
+          "detailed": "U' D' R' R' D R U' R' D' R U R D U",
+          "commutator": "U' D' R':[R' D R,U']",
+          "setup": "(FW)",
+          "possible": "U2 R U R' U' R' D' R U R' D R R U' R' U2"
+        },
+        {
+          "encoder": "AF",
+          "detailed": "U' R' U' R' D' R U R' D R R U",
+          "commutator": "U' R':[U',R' D' R]",
+          "setup": "U' R'",
+          "block": "Z",
+          "possible": "R' U R U' R D R' U2 R D' R' U' R' U' R"
+        },
+        {
+          "encoder": "WF",
+          "detailed": "U' R' U' R' D R U R' D' R R U",
+          "commutator": "U' R':[U',R' D R]",
+          "setup": "U' R'",
+          "block": "M",
+          "possible": "U' R' U R U2 R' D R U R' D' R U R' U' R U"
+        },
+        {
+          "encoder": "XF",
+          "detailed": "U' D' R' U' R' D R U R' D' R R D U",
+          "commutator": "U' D' R':[U',R' D R]",
+          "setup": "(WF)",
+          "block": "",
+          "possible": "U2 R U R' R' D' R U' R' D R U R U' R' U2"
+        },
+        {
+          "encoder": "IP",
+          "detailed": "U' R' U' R D' R' U2 R D R' U' R U",
+          "commutator": "U' R' U':[R D' R',U2]",
+          "setup": "U' R'",
+          "block": "Q",
+          "possible": "U2 R U R' U' R D' R' U R U' R' U2 R D R'"
+        },
+        {
+          "encoder": "PI",
+          "detailed": "U' R' U R D' R' U2 R D R' U R U",
+          "commutator": "U' R' U':[U2,R D' R']",
+          "setup": "U' R'",
+          "block": "Q",
+          "possible": "R D' R' U2 R U R' U' R D R' U R U' R' U2"
+        },
+        {
+          "encoder": "SW",
+          "detailed": "U' R' R' D R U R' D' R U' R U",
+          "commutator": "U' R':[R' D R,U]",
+          "setup": "U' R'",
+          "block": "M",
+          "possible": "U' R' U' R U R F' R' U' R' U R U R F R'"
+        },
+        {
+          "encoder": "WS",
+          "detailed": "U' R' U R' D R U' R' D' R R U",
+          "commutator": "U' R':[U,R' D R]",
+          "setup": "U' R'",
+          "block": "M",
+          "possible": "R F' R' U' R' U' R U R F R' U' R' U R U"
+        },
+        {
+          "encoder": "PX",
+          "detailed": "U' D' R' R' D R U R' D' R U' R D U",
+          "commutator": "U' D' R':[R' D R,U]",
+          "setup": "(SW)",
+          "possible": "F' R R D' R' U2 R D R' U2 R' F"
+        },
+        {
+          "encoder": "XP",
+          "detailed": "U' D' R' U R' D R U' R' D' R R D U",
+          "commutator": "U' D' R':[U,R' D R]",
+          "setup": "(WS)",
+          "block": "",
+          "possible": "F' R U2 R D' R' U2 R D R' R' F"
+        },
+        {
+          "encoder": "EM",
+          "detailed": "U R' U' R' D R U R' D' R R U'",
+          "commutator": "U R':[U',R' D R]",
+          "setup": "U R'",
+          "block": "M",
+          "possible": "R' D R U R' U R U' R' D' R U R' U' R U'"
+        },
+        {
+          "encoder": "ME",
+          "detailed": "U R' R' D R U' R' D' R U R U'",
+          "commutator": "U R':[R' D R,U']",
+          "setup": "U R'",
+          "block": "M",
+          "possible": "U R' U R U' R' D R U R' U' R U' R' D' R"
+        },
+        {
+          "encoder": "IQ",
+          "detailed": "U R U2 R D' R' U2 R D R' R' U'",
+          "commutator": "U R:[U2,R D' R']",
+          "setup": "U R",
+          "block": "Q",
+          "possible": "R' F' R R D' R' U2 R D R' U2 R' F R"
+        },
+        {
+          "encoder": "IM",
+          "detailed": "U R U' R' D R U2 R' D' R U' R' U'",
+          "commutator": "U R U':[R' D R,U2]",
+          "setup": "U R",
+          "block": "M",
+          "possible": "R' D R U2 R' U' R U R' D' R U' R' U R U2"
+        },
+        {
+          "encoder": "QI",
+          "detailed": "U R R D' R' U2 R D R' U2 R' U'",
+          "commutator": "U R:[R D' R',U2]",
+          "setup": "U R",
+          "block": "Q",
+          "possible": "R' F' R U2 R D' R' U2 R D R' R' F R"
+        },
+        {
+          "encoder": "MI",
+          "detailed": "U R U R' D R U2 R' D' R U R' U'",
+          "commutator": "U R U':[U2,R' D R]",
+          "setup": "U R",
+          "block": "M",
+          "possible": "U2 R' U' R U R' D R U' R' U R U2 R' D' R"
+        },
+        {
+          "encoder": "YR",
+          "detailed": "U R U' D' R' D R U R' D' R D R' U'",
+          "commutator": "U R D':[U',R' D R]",
+          "setup": "U R",
+          "block": "Y",
+          "possible": "R D' R' U R U' R' D R U R' D' U' R D R'"
+        },
+        {
+          "encoder": "RY",
+          "detailed": "U R D' R' D R U' R' D' R D U R' U'",
+          "commutator": "U R D':[R' D R,U']",
+          "setup": "U R",
+          "block": "Y",
+          "possible": "R D' R' U D R U' R' D' R U R' U' R D R'"
+        }
+      ],
+      "R.B.R": [
+        {
+          "encoder": "IY",
+          "detailed": "R B R' U2 R' D' R U2 R' D R R B' R'",
+          "commutator": "R B R':[U2,R' D' R]",
+          "setup": "R B R'",
+          "block": "Z",
+          "possible": "U' R' U' R D R' U2 R D' R' U' R U"
+        },
+        {
+          "encoder": "IW",
+          "detailed": "R B R' U2 R' D R U2 R' D' R R B' R'",
+          "commutator": "R B R':[U2,R' D R]",
+          "setup": "R B R'",
+          "block": "M",
+          "possible": "U' R' R' D R U2 R' D' R U2 R U"
+        },
+        {
+          "encoder": "IR",
+          "detailed": "R B R' U R D R' U2 R D' R' U R B' R'",
+          "commutator": "R B R' U:[R D R',U2]",
+          "setup": "R B R'",
+          "block": "S"
+        },
+        {
+          "encoder": "IF",
+          "detailed": "R B R' U R D' R' U2 R D R' U R B' R'",
+          "commutator": "R B R' U:[R D' R',U2]",
+          "setup": "R B R'",
+          "block": "Q",
+          "possible": "U R U2 R D R' U2 R D' R' R' U'"
+        },
+        {
+          "encoder": "YI",
+          "detailed": "R B R' R' D' R U2 R' D R U2 R B' R'",
+          "commutator": "R B R':[R' D' R,U2]",
+          "setup": "R B R'",
+          "block": "Z",
+          "possible": "U' R' U R D R' U2 R D' R' U R U"
+        },
+        {
+          "encoder": "WI",
+          "detailed": "R B R' R' D R U2 R' D' R U2 R B' R'",
+          "commutator": "R B R':[R' D R,U2]",
+          "setup": "R B R'",
+          "block": "M",
+          "possible": "U' R' U2 R' D R U2 R' D' R R U"
+        },
+        {
+          "encoder": "RI",
+          "detailed": "R B R' U' R D R' U2 R D' R' U' R B' R'",
+          "commutator": "R B R' U:[U2,R D R']",
+          "setup": "R B R'",
+          "block": "S"
+        },
+        {
+          "encoder": "FI",
+          "detailed": "R B R' U' R D' R' U2 R D R' U' R B' R'",
+          "commutator": "R B R' U:[U2,R D' R']",
+          "setup": "R B R'",
+          "block": "Q",
+          "possible": "U R R D R' U2 R D' R' U2 R' U'"
+        },
+        {
+          "encoder": ""
+        },
+        {
+          "encoder": "IX",
+          "detailed": "D' R B R' U2 R' D R U2 R' D' R R B' R' D",
+          "commutator": "D' R B R':[U2,R' D R]",
+          "setup": "(IW)",
+          "possible": "U' D' R' R' D R U2 R' D' R U2 R D U"
+        },
+        {
+          "encoder": "XI",
+          "detailed": "R B R' D' R' D R U2 R' D' R D U2 R B' R'",
+          "commutator": "R B R' D':[R' D R,U2]",
+          "setup": "(WI)",
+          "possible": "U' D' R' U2 R' D R U2 R' D' R R D U"
+        },
+        {
+          "encoder": "OY",
+          "detailed": "R B R' U2 R' D' R U' R' D R U' R B' R'",
+          "commutator": "R B R' U:[U,R' D' R]",
+          "setup": "R B R'",
+          "block": "Z",
+          "possible": "R2 U' R' U R D' R' U' R D U R2"
+        },
+        {
+          "encoder": "OW",
+          "detailed": "R B R' U2 R' D R U' R' D' R U' R B' R'",
+          "commutator": "R B R' U:[U,R' D R]",
+          "setup": "R B R'",
+          "block": "M"
+        },
+        {
+          "encoder": "OM",
+          "detailed": "R B R' U2 D R' D' R U' R' D R D' U' R B' R'",
+          "commutator": "R B R' U2 D:[R' D' R,U']",
+          "setup": "R B R'",
+          "block": "N"
+        },
+        {
+          "encoder": "YO",
+          "detailed": "R B R' U R' D' R U R' D R U2 R B' R'",
+          "commutator": "R B R' U:[R' D' R,U]",
+          "setup": "R B R'",
+          "block": "Z",
+          "possible": "R2 U' D' R' U R D R' U' R U R2"
+        },
+        {
+          "encoder": "WO",
+          "detailed": "R B R' U R' D R U R' D' R U2 R B' R'",
+          "commutator": "R B R' U:[R' D R,U]",
+          "setup": "R B R'",
+          "block": "M"
+        },
+        {
+          "encoder": "MO",
+          "detailed": "R B R' U D R' D' R U R' D R D' U2 R B' R'",
+          "commutator": "R B R' U2 D:[U',R' D' R]",
+          "setup": "R B R'",
+          "block": "N"
+        },
+        {
+          "encoder": "OF",
+          "detailed": "R B R' U R D' R' U' R D B' R'",
+          "commutator": "R B:[R' U R,D']",
+          "setup": "R B",
+          "block": ""
+        },
+        {
+          "encoder": "OR",
+          "detailed": "R B R' U R D R' U' R D' B' R'",
+          "commutator": "R B:[R' U R,D]",
+          "setup": "R B",
+          "block": ""
+        },
+        {
+          "encoder": "FO",
+          "detailed": "R B D' R' U R D R' U' R B' R'",
+          "commutator": "R B:[D',R' U R]",
+          "setup": "R B",
+          "block": ""
+        },
+        {
+          "encoder": "RO",
+          "detailed": "R B D R' U R D' R' U' R B' R'",
+          "commutator": "R B:[D,R' U R]",
+          "setup": "R B",
+          "block": ""
+        },
+        {
+          "encoder": "FZ",
+          "detailed": "R B' R' U R' D' R U' R' D R R B R'",
+          "commutator": "R B' R':[U,R' D' R]",
+          "setup": "R B'R'",
+          "block": "Z"
+        },
+        {
+          "encoder": "ZF",
+          "detailed": "R B' R' R' D' R U R' D R U' R B R'",
+          "commutator": "R B' R':[R' D' R,U]",
+          "setup": "R B'R'",
+          "block": "Z"
+        },
+        {
+          "encoder": "FM",
+          "detailed": "R B' R' U R' D R U' R' D' R R B R'",
+          "commutator": "R B' R':[U,R' D R]",
+          "setup": "R B'R'",
+          "block": "M"
+        },
+        {
+          "encoder": "MF",
+          "detailed": "R B' R' R' D R U R' D' R U' R B R'",
+          "commutator": "R B' R':[R' D R,U]",
+          "setup": "R B'R'",
+          "block": "M"
+        },
+        {
+          "encoder": "FH",
+          "detailed": "R B' D' R' U' R D R' U R B R'",
+          "commutator": "R B':[D',R' U' R]",
+          "setup": "R B'",
+          "possible": "R' U R U2 R D R' U R D' R' U R' U' R"
+        },
+        {
+          "encoder": "HF",
+          "detailed": "R B' R' U' R D' R' U R D B R'",
+          "commutator": "R B':[R' U' R,D']",
+          "setup": "R B'",
+          "block": "",
+          "possible": "R' U R U' R D R' U' R D' R' U2 R' U' R"
+        },
+        {
+          "encoder": "QH",
+          "detailed": "R B' D' R' U R D R' U' R B R'",
+          "commutator": "R B':[D',R' U R]",
+          "setup": "R B'",
+          "possible": "U' R U R' U' R D' R' U R D U' R' U"
+        },
+        {
+          "encoder": "HQ",
+          "detailed": "R B' R' U R D' R' U' R D B R'",
+          "commutator": "R B':[R' U R,D']",
+          "setup": "R B'",
+          "possible": "U' R U D' R' U' R D R' U R U' R' U"
+        },
+        {
+          "encoder": "OA",
+          "detailed": "R' B R U' R' D' R U R' D B' R",
+          "commutator": "R' B:[R U' R',D']",
+          "setup": "R'B",
+          "block": ""
+        },
+        {
+          "encoder": "OG",
+          "detailed": "R' B R U R' D' R U' R' D B' R",
+          "commutator": "R' B:[R U R',D']",
+          "setup": "R'B",
+          "block": ""
+        },
+        {
+          "encoder": "OS",
+          "detailed": "R' B R U2 R' D' R U2 R' D B' R",
+          "commutator": "R' B:[R U2 R',D']",
+          "setup": "R'B",
+          "block": "",
+          "possible": "U' R' D' R D R' U' R D' R' D U R U"
+        },
+        {
+          "encoder": "AO",
+          "detailed": "R' B D' R U' R' D R U R' B' R",
+          "commutator": "R' B:[D',R U' R']",
+          "setup": "R'B"
+        },
+        {
+          "encoder": "GO",
+          "detailed": "R' B D' R U R' D R U' R' B' R",
+          "commutator": "R' B:[D',R U R']",
+          "setup": "R'B"
+        },
+        {
+          "encoder": "SO",
+          "detailed": "R' B D' R U2 R' D R U2 R' B' R",
+          "commutator": "R' B:[D',R U2 R']",
+          "setup": "R'B",
+          "possible": "U' R' U' D' R D R' U R D' R' D R U"
+        },
+        {
+          "encoder": "DO",
+          "detailed": "U' R' B R U R' D' R U2 R' D R U R' B' R U",
+          "commutator": "U' R' B R U:[R' D' R,U2]",
+          "setup": "U'R'B R"
+        },
+        {
+          "encoder": "OD",
+          "detailed": "U' R' B R U' R' D' R U2 R' D R U' R' B' R U",
+          "commutator": "U' R' B R U:[U2,R' D' R]",
+          "setup": "U'R'B R",
+          "block": ""
+        },
+        {
+          "encoder": "PM",
+          "detailed": "U' R B R' R' D R U R' D' R U' R B' R' U",
+          "commutator": "U' R B R':[R' D R,U]",
+          "setup": "U'R B R'",
+          "block": "M",
+          "possible": "F' R U' R D' R' U' R D R' U2 R' F"
+        },
+        {
+          "encoder": "MP",
+          "detailed": "U' R B R' U R' D R U' R' D' R R B' R' U",
+          "commutator": "U' R B R':[U,R' D R]",
+          "setup": "U'R B R'",
+          "block": "M",
+          "possible": "F' R U2 R D' R' U R D R' U R' F"
+        },
+        {
+          "encoder": "PZ",
+          "detailed": "U' R B R' R' D' R U R' D R U' R B' R' U",
+          "commutator": "U' R B R':[R' D' R,U]",
+          "setup": "U'R B R'",
+          "block": "Z"
+        },
+        {
+          "encoder": "ZP",
+          "detailed": "U' R B R' U R' D' R U' R' D R R B' R' U",
+          "commutator": "U' R B R':[U,R' D' R]",
+          "setup": "U'R B R'",
+          "block": "Z"
         }
       ],
       "R.D.R": [
         {
-          "encoder": "GT",
-          "commutator": "R'F'RU:[R' D' R,U2]",
-          "detailed": "R'F'RUR'D'RU2R'DRUR'FR",
-          "block": "Z",
-          "step": "R'F'R",
-          "possible": "[]"
+          "encoder": "RA",
+          "detailed": "R D' R' U' R' D R U R' D' R R D R'",
+          "commutator": "R D' R':[U',R' D R]",
+          "setup": "R D'R'",
+          "block": "M"
         },
         {
-          "encoder": "GZ",
-          "commutator": "R' F' R U:[R' D R,U2]",
-          "detailed": "R'F'RUR'DRU2R'D'RUR'FR",
-          "block": "M",
-          "step": "R'F'R",
-          "possible": "[]"
+          "encoder": "RD",
+          "detailed": "R D' R' U2 R' D R U2 R' D' R R D R'",
+          "commutator": "R D' R':[U2,R' D R]",
+          "setup": "R D'R'",
+          "block": "M"
+        },
+        {
+          "encoder": "RQ",
+          "detailed": "R D' R' U R' D R U' R' D' R R D R'",
+          "commutator": "R D' R':[U,R' D R]",
+          "setup": "R D'R'",
+          "block": "M"
+        },
+        {
+          "encoder": "AR",
+          "detailed": "R D' R' R' D R U' R' D' R U R D R'",
+          "commutator": "R D' R':[R' D R,U']",
+          "setup": "R D'R'",
+          "block": "M"
+        },
+        {
+          "encoder": "DR",
+          "detailed": "R D' R' R' D R U2 R' D' R U2 R D R'",
+          "commutator": "R D' R':[R' D R,U2]",
+          "setup": "R D'R'",
+          "block": "M"
+        },
+        {
+          "encoder": "QR",
+          "detailed": "R D' R' R' D R U R' D' R U' R D R'",
+          "commutator": "R D' R':[R' D R,U]",
+          "setup": "R D'R'",
+          "block": "M"
+        },
+        {
+          "encoder": "DX",
+          "detailed": "D R D' R' R' D R U2 R' D' R U2 R D R' D'",
+          "commutator": "D R D' R':[R' D R,U2]",
+          "setup": "(DR)"
+        },
+        {
+          "encoder": "XD",
+          "detailed": "D R D' R' U2 R' D R U2 R' D' R R D R' D'",
+          "commutator": "D R D' R':[U2,R' D R]",
+          "setup": "(RD)",
+          "block": ""
+        },
+        {
+          "encoder": "SZ",
+          "detailed": "R D R' R' D' R U R' D R U' R D' R'",
+          "commutator": "R D R':[R' D' R,U]",
+          "setup": "R D R'",
+          "block": "Z",
+          "possible": "R D' R' D R U R' D' R D U' R'"
+        },
+        {
+          "encoder": "ZS",
+          "detailed": "R D R' U R' D' R U' R' D R R D' R'",
+          "commutator": "R D R':[U,R' D' R]",
+          "setup": "R D R'",
+          "block": "Z",
+          "possible": "R U D' R' D R U' R' D' R D R'"
+        },
+        {
+          "encoder": "PT",
+          "detailed": "D' R D R' R' D' R U R' D R U' R D' R' D",
+          "commutator": "D' R D R':[R' D' R,U]",
+          "setup": "(SZ)"
+        },
+        {
+          "encoder": "TP",
+          "detailed": "D' R D R' U R' D' R U' R' D R R D' R' D",
+          "commutator": "D' R D R':[U,R' D' R]",
+          "setup": "(ZS)",
+          "block": ""
+        },
+        {
+          "encoder": "DI",
+          "detailed": "R D R' U' D' R D R' U2 R D' R' D U' R D' R'",
+          "commutator": "R D R' U' D':[R D R',U2]",
+          "setup": "R D R'",
+          "block": "P",
+          "possible": "U R D R D' R' U2 R D R' D' U2 R' U'"
+        },
+        {
+          "encoder": "ID",
+          "detailed": "R D R' U D' R D R' U2 R D' R' D U R D' R'",
+          "commutator": "R D R' U' D':[U2,R D R']",
+          "setup": "R D R'",
+          "block": "P",
+          "possible": "U R U2 D R D' R' U2 R D R' D' R' U'"
+        },
+        {
+          "encoder": "CI",
+          "detailed": "R' D' R U' D R' D' R U2 R' D R D' U' R' D R",
+          "commutator": "R' D' R U' D:[R' D' R,U2]",
+          "setup": "R'D'R",
+          "block": "N",
+          "possible": "U' R' U2 D' R' D R U2 R' D' R D R U"
+        },
+        {
+          "encoder": "IC",
+          "detailed": "R' D' R U D R' D' R U2 R' D R D' U R' D R",
+          "commutator": "R' D' R U' D:[U2,R' D' R]",
+          "setup": "R'D'R",
+          "block": "N",
+          "possible": "U' R' D' R' D R U2 R' D' R D U2 R U"
+        },
+        {
+          "encoder": "AD",
+          "detailed": "R' D R U' R' D' R U' R' D R U2 R' D' R",
+          "commutator": "R' D R U':[R' D' R,U']",
+          "setup": "R'D R",
+          "block": "Z"
+        },
+        {
+          "encoder": "DA",
+          "detailed": "R' D R U2 R' D' R U R' D R U R' D' R",
+          "commutator": "R' D R U':[U',R' D' R]",
+          "setup": "R'D R",
+          "block": "Z"
+        },
+        {
+          "encoder": "AG",
+          "detailed": "R' D R U' R' D' R U2 R' D R U' R' D' R",
+          "commutator": "R' D R U':[R' D' R,U2]",
+          "setup": "R'D R",
+          "block": "Z"
+        },
+        {
+          "encoder": "GA",
+          "detailed": "R' D R U R' D' R U2 R' D R U R' D' R",
+          "commutator": "R' D R U':[U2,R' D' R]",
+          "setup": "R'D R",
+          "block": "Z"
+        },
+        {
+          "encoder": "DG",
+          "detailed": "R' D R U2 R' D' R U' R' D R U' R' D' R",
+          "commutator": "R' D R U:[U,R' D' R]",
+          "setup": "R'D R",
+          "block": "Z"
+        },
+        {
+          "encoder": "GD",
+          "detailed": "R' D R U R' D' R U R' D R U2 R' D' R",
+          "commutator": "R' D R U:[R' D' R,U]",
+          "setup": "R'D R",
+          "block": "Z"
+        },
+        {
+          "encoder": "MX",
+          "detailed": "U' R' D R R D' R' U' R D R' U R' D' R U",
+          "commutator": "U' R' D R:[R D' R',U']",
+          "setup": "U'R'D R",
+          "block": "Q"
+        },
+        {
+          "encoder": "XM",
+          "detailed": "U' R' D R U' R D' R' U R D R' R' D' R U",
+          "commutator": "U' R' D R:[U',R D' R']",
+          "setup": "U'R'D R",
+          "block": "Q"
+        }
+      ],
+      "HARD": [
+        {
+          "encoder": "XA",
+          "detailed": "U' R' D R U' R D' R' U R D R' U R' D' R",
+          "commutator": "[U',R' D R U' R D' R']"
+        },
+        {
+          "encoder": "AX",
+          "detailed": "R' D R U' R D' R' U' R D R' U R' D' R U",
+          "commutator": "[R' D R U' R D' R',U']",
+          "setup": ""
+        },
+        {
+          "encoder": "XG",
+          "detailed": "U R' D R U' R D' R' U' R D R' U R' D' R",
+          "commutator": "[U,R' D R U' R D' R']"
+        },
+        {
+          "encoder": "GX",
+          "detailed": "R' D R U' R D' R' U R D R' U R' D' R U'",
+          "commutator": "[R' D R U' R D' R',U]",
+          "setup": ""
+        },
+        {
+          "encoder": "GR",
+          "detailed": "U' R D' R' U R' D R U R' D' R U' R D R'",
+          "commutator": "[U',R D' R' U R' D R]"
+        },
+        {
+          "encoder": "RG",
+          "detailed": "R D' R' U R' D R U' R' D' R U' R D R' U",
+          "commutator": "[R D' R' U R' D R,U']",
+          "setup": ""
+        },
+        {
+          "encoder": "IE",
+          "detailed": "R U R2 D R2 D' R2 U' R2 D R2 D' R",
+          "commutator": "R:[U,R2 D R2 D' R2]"
+        },
+        {
+          "encoder": "EI",
+          "detailed": "R' D R2 D' R2 U R2 D R2 D' R2 U' R'",
+          "commutator": "R:[R2 D R2 D' R2,U]",
+          "setup": ""
+        },
+        {
+          "encoder": "BM",
+          "detailed": "R' D F2 D' R D R' F2 R D'",
+          "commutator": "R' D:[F2,D' R D R']"
+        },
+        {
+          "encoder": "MB",
+          "detailed": "D R' F2 R D' R' D F2 D' R",
+          "commutator": "D R':[F2,R D' R' D]",
+          "setup": ""
+        },
+        {
+          "encoder": "BY",
+          "detailed": "D' R' D F2 D' R D R' F2 R",
+          "commutator": "D' R' D:[F2,D' R D R']",
+          "setup": "R':[R D' R' D,F2]"
+        },
+        {
+          "encoder": "YB",
+          "detailed": "R' F2 R D' R' D F2 D' R D",
+          "commutator": "R':[F2,R D' R' D]"
+        },
+        {
+          "encoder": "QM",
+          "detailed": "R' D F' D' R D R' F R D'",
+          "commutator": "R' D:[F',D' R D R']",
+          "possible": "R B' R' U R' D R U R' D' R U2 R B R'"
+        },
+        {
+          "encoder": "MQ",
+          "detailed": "D R' F' R D' R' D F D' R",
+          "commutator": "D R':[F',R D' R' D]",
+          "setup": "",
+          "possible": "R B' R' U2 R' D R U' R' D' R U' R B R'"
+        },
+        {
+          "encoder": "NY",
+          "detailed": "D' R' D F' D' R D R' F R",
+          "commutator": "D' R' D:[F',D' R D R']",
+          "setup": "R':[R D' R' D,F']",
+          "possible": "F D R U' R' D' R U R' F'"
+        },
+        {
+          "encoder": "YN",
+          "detailed": "R' F' R D' R' D F D' R D",
+          "commutator": "R':[F',R D' R' D]",
+          "possible": "F R U' R' D R U R' D' F'"
+        },
+        {
+          "encoder": "NO",
+          "detailed": "R' D R D' R' D F' D' R D R' F D' R",
+          "commutator": "R' D:[R D' R' D,F']",
+          "possible": "F R U' R D' R' U' R D R' U2 R' F'"
+        },
+        {
+          "encoder": "ON",
+          "detailed": "R' D F' R D' R' D F D' R D R' D' R",
+          "commutator": "R' D:[F',R D' R' D]",
+          "possible": "F R U2 R D' R' U R D R' U R' F'"
+        },
+        {
+          "encoder": "IN",
+          "detailed": "D R' D' R U' R B' R' R' D R D' R B R' U",
+          "commutator": "[D R' D' R,U' R B' R']",
+          "possible": "D R' F' R U R' D' R U2 R' D R U R' F R D'"
+        },
+        {
+          "encoder": "NI",
+          "detailed": "U' R B' R' D R' D' R R B R' U R' D R D'",
+          "commutator": "[U' R B' R',D R' D' R]",
+          "setup": "",
+          "possible": "D R' F' R U' R' D' R U2 R' D R U' R' F R D'"
+        },
+        {
+          "encoder": "OI",
+          "detailed": "D' R D R' U R' F R R D' R' D R' F' R U'",
+          "commutator": "[D' R D R',U R' F R]",
+          "possible": "U' R' U D' R D R' U2 R D' R' D U R U"
+        },
+        {
+          "encoder": "IO",
+          "detailed": "U R' F R D' R D R' R' F' R U' R D' R' D",
+          "commutator": "[U R' F R,D' R D R']",
+          "setup": "",
+          "possible": "U' R' U' D' R D R' U2 R D' R' D U' R U"
+        },
+        {
+          "encoder": "BP",
+          "detailed": "U' D' R D R' U R' F R R D' R' D R' F' R ",
+          "commutator": "U':[D' R D R',U R' F R]",
+          "possible": "B R U R' D' R U2 R' D R U R' B'"
+        },
+        {
+          "encoder": "PB",
+          "detailed": "R' F R D' R D R' R' F' R U' R D' R' D U ",
+          "commutator": "U':[U R' F R,D' R D R']",
+          "possible": "B R U' R' D' R U2 R' D R U' R' B'"
+        },
+        {
+          "encoder": "EP",
+          "detailed": "U' D' R D R' R' F R R D' R' D R' F' R U",
+          "commutator": "U':[D' R D R',R' F R]",
+          "setup": "U' R':[R D' R D R2,F]",
+          "possible": "U R' U2 D' R D R' U R D' R' D U R U'"
+        },
+        {
+          "encoder": "PE",
+          "detailed": "U' R' F R D' R D R' R' F' R R D' R' D U",
+          "commutator": "U':[R' F R,D' R D R']",
+          "setup": "U' R':[F,R D' R D R2]",
+          "possible": "U R' U' D' R D R' U' R D' R' D U2 R U'"
+        },
+        {
+          "encoder": "QF",
+          "detailed": "U' U' R U' R' U R D' R' U' R U R' U R D R' U",
+          "commutator": "U':[U' R U' R' U,R D' R']",
+          "setup": "U2 R:[U',R' U R D' R' U' R]",
+          "possible": "R2 B' R' U R D' R' U2 R D R' U R B R2"
+        },
+        {
+          "encoder": "FQ",
+          "detailed": "U' R D' R' U' R U' R' U R D R' U' R U R' U U",
+          "commutator": "U':[R D' R',U' R U' R' U]",
+          "setup": "U2 R:[R' U R D' R' U' R,U']",
+          "possible": "R2 B' R' U' R D' R' U2 R D R' U' R B R2"
+        },
+        {
+          "encoder": "HP",
+          "detailed": "R U R2 D' R2 U' R' U R2 D R2 U'",
+          "commutator": "[R,U R2 D' R2 U']",
+          "possible": "R' U D2 R U' R' D2 R U R' U' R",
+          "setup": "R' U",
+          "block": ""
+        },
+        {
+          "encoder": "PH",
+          "detailed": "U R2 D' R2 U' R U R2 D R2 U' R'",
+          "commutator": "[U R2 D' R2 U',R]",
+          "setup": "",
+          "possible": "R' U R U' R' D2 R U R' D2 U' R"
+        },
+        {
+          "encoder": "CO",
+          "detailed": "R2 D' R2 U' R U R2 D R2 U' R' U",
+          "commutator": "[R2 D' R2,U' R U]",
+          "setup": "R2:[D',R2 U' R U R2]",
+          "possible": "F R U' R D' R' U R D R' R' F'"
+        },
+        {
+          "encoder": "OC",
+          "detailed": "U' R U R2 D' R2 U' R' U R2 D R2",
+          "commutator": "[U' R U,R2 D' R2]",
+          "setup": "R2:[R2 U' R U R2,D']",
+          "possible": "F R R D' R' U' R D R' U R' F'"
+        },
+        {
+          "encoder": "TO",
+          "detailed": "R2 D' R2 U' R' U R2 D R2 U' R U",
+          "commutator": "[R2 D' R2,U' R' U]",
+          "setup": "R2:[D',R2 U' R' U R2]",
+          "possible": "R2 U' D' R' U' R D R' U R U R2"
+        },
+        {
+          "encoder": "OT",
+          "detailed": "U' R' U R2 D' R2 U' R U R2 D R2",
+          "commutator": "[U' R' U,R2 D' R2]",
+          "setup": "R2:[R2 U' R' U R2,D']",
+          "possible": "R2 U' R' U' R D' R' U R D U R2"
+        },
+        {
+          "encoder": "HW",
+          "detailed": "U' R2 D R2 U R' U' R2 D' R2 U R",
+          "commutator": "[U' R2 D R2 U,R']",
+          "possible": "U R' F R U' R' D R U2 R' D' R U' R' F' R U'"
+        },
+        {
+          "encoder": "WH",
+          "detailed": "R' U' R2 D R2 U R U' R2 D' R2 U",
+          "commutator": "[R',U' R2 D R2 U]",
+          "possible": "U R' F R U R' D R U2 R' D' R U R' F' R U'"
+        },
+        {
+          "encoder": "WY",
+          "detailed": "R U' R2 D R2 U R' U' R2 D' R2 U",
+          "commutator": "[R,U' R2 D R2 U]",
+          "possible": "U R' F R U R' D' R U2 R' D R U R' F' R U'"
+        },
+        {
+          "encoder": "YW",
+          "detailed": "U' R2 D R2 U R U' R2 D' R2 U R'",
+          "commutator": "[U' R2 D R2 U,R]",
+          "possible": "U R' F R U' R' D' R U2 R' D R U' R' F' R U'"
+        },
+        {
+          "encoder": "TW",
+          "detailed": "R' U R U' R2 D R2 U R' U' R2 D' R'",
+          "commutator": "R':[U R U',R2 D R2]",
+          "setup": "R:[R2 U R U' R2,D]",
+          "possible": "U' R2 U D R U' R' D' R U R' U' R2 U"
+        },
+        {
+          "encoder": "WT",
+          "detailed": "R D R2 U R U' R2 D' R2 U R' U' R",
+          "commutator": "R':[R2 D R2,U R U']",
+          "setup": "R:[D,R2 U R U' R2]",
+          "possible": "U' R2 U R U' R' D R U R' D' U' R2 U"
         }
       ]
     }
