@@ -107,7 +107,8 @@ export function ThreeStyle() {
 	const [isRight, setIsRight] = useState(false);
 	const [currentValue, setCurrentValue] = useState(""); //input value
 	const [currentSplitValue, setCurrentSplitValue] = useState<Array<string>>([]); //input value
-
+	const [showInput, setShowInput] = useState(true);
+	const [showDetailed, setShowDetailed] = useState(true);
 
 	useEffect(() => {
 		getData("cubeExercises/data/3cycle.json").then((data: ThreeStyleInfo) => {
@@ -340,10 +341,10 @@ export function ThreeStyle() {
 						</Box>
 
 						<Flex wrap="wrap">
-							<Box p={4}><Text fontSize={18} fontWeight="bold">交换子: {currentIdxData.commutator}</Text></Box>
+							<Box p={4}><Text fontSize={18} fontWeight="bold">交换子: {showDetailed ? currentIdxData.commutator : "***"}</Text></Box>
 							<Box p={4}><Text fontSize={18} fontWeight="bold">交换块: {currentIdxData.block}</Text></Box>
 							<Box p={4}><Text fontSize={18} fontWeight="bold">交换步骤: {currentIdxData.step}</Text></Box>
-							<Box p={4}><Text fontSize={18} fontWeight="bold">展开公式: {currentIdxData.detailed}</Text></Box>
+							<Box p={4}><Text fontSize={18} fontWeight="bold">展开公式: {showDetailed ?  currentIdxData.detailed : "***"}</Text></Box>
 							<Box p={4}><Text fontSize={18} fontWeight="bold">备选: {currentIdxData.possible}</Text></Box>
 						</Flex>
 						<Flex w="100%" justifyContent="center" flexDirection="column">
@@ -359,7 +360,14 @@ export function ThreeStyle() {
 										<Text key={item + idx} w="100%" h="100%" align="center" lineHeight="40px">{item}</Text></Box>))
 									}
 								</Flex>
-								<Input tabIndex={-1} h={"80px"} fontSize={30} placeholder="输入公式" value={currentValue} onChange={(e) => handleInput(e)} ref={inputRef} />
+								{
+									showInput && (<Input tabIndex={-1} h={"80px"} fontSize={30} placeholder="输入公式" value={currentValue} onChange={(e) => handleInput(e)} ref={inputRef} />
+									)
+								}
+							</Box>
+								<Box display="flex" justifyContent="center" mt={6}>
+								<Button mx={2} bg="twitter.400" onClick={() => setShowInput(val => !val)}>{showInput ? "隐藏" : "显示"}输入框</Button>
+								<Button mx={2} bg="twitter.400" onClick={() => setShowDetailed(val => !val)}>{showDetailed ? "隐藏" : "显示"}公式</Button>
 							</Box>
 							<Box display="flex" justifyContent="center" m={6}>
 								<Button mx={2} bg="twitter.400" onClick={() => prevHandle()}>Prev</Button>
