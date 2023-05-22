@@ -345,7 +345,7 @@ export function ThreeStyle() {
 							<Box p={4}><Text fontSize={18} fontWeight="bold">交换块: {currentIdxData.block}</Text></Box>
 							<Box p={4}><Text fontSize={18} fontWeight="bold">交换步骤: {currentIdxData.step}</Text></Box>
 							<Box p={4}><Text fontSize={18} fontWeight="bold">展开公式: {showDetailed ?  currentIdxData.detailed : "***"}</Text></Box>
-							<Box p={4}><Text fontSize={18} fontWeight="bold">备选: {currentIdxData.possible}</Text></Box>
+							<Box p={4}><Text fontSize={18} fontWeight="bold">备选: {showDetailed ? currentIdxData.possible : "***"}</Text></Box>
 						</Flex>
 						<Flex w="100%" justifyContent="center" flexDirection="column">
 							<Box display="flex" flexDirection="column" justifyContent="center" alignItems="center">
