@@ -6,7 +6,6 @@ import TouchLine from "./touchLine.js";
 import { isPhone } from "./utils/utils.js";
 import ResetBtn from "./reset.js";
 import DisorganizeBtn from "./disorganize.js";
-import { off } from 'process';
 
 // 坐标系
 let axesHelper = new THREE.AxesHelper(250);
