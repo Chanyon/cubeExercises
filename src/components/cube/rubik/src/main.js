@@ -1,11 +1,13 @@
+//* 参考 https://github.com/newbieYoung/Threejs_rubik
+//*
 import * as THREE from 'three';
 import { Rubik } from "./Rubik.js";
 import TouchLine from "./touchLine.js";
 import { isPhone } from "./utils/utils.js";
 import ResetBtn from "./reset.js";
 import DisorganizeBtn from "./disorganize.js";
+import { off } from 'process';
 
-//* 参考 https://github.com/newbieYoung/Threejs_rubik
 // 坐标系
 let axesHelper = new THREE.AxesHelper(250);
 //页面加载完成
@@ -104,24 +106,36 @@ class Main {
   // touch event
   initEvent() {
     if (isPhone()) {
-      document.addEventListener('touchstart', e => {
+      this.retina.addEventListener('touchstart', e => {
         let touch = e.touches[0];
         this.startPoint = touch;
-        if (this.touchLine.isHover(touch)) {
+        if (this.touchLine.isHover(e)) {
           this.touchLine.enable();
+        } else if (this.resetBtn.isHover(e) && !this.isRotating) {
+          this.resetBtn.enable();
+          this.resetRubik();
+        } else if (this.disorganizeBtn.isHover(e) && !this.isRotating) {
+          this.disorganizeBtn.enable();
+          this.startDisturbed2();
+        } else {
+          this.getIntersects(e);
+          if (!this.isRotating && !this.intersect) {
+            const x = touch.pageX - e.target.offsetLeft;
+            const y = touch.pageY - e.target.offsetTop;
+            this.startPoint = new THREE.Vector2(x, y);
+          }
+          if (!this.isRotating && this.intersect) {
+            this.startPoint = this.intersect.point;
+          }
         }
-
-        this.getIntersects(e);
-        if (!this.isRotating && this.intersect) {
-          this.startPoint = this.intersect.point;
-        }
-        // console.log(this.intersect);
       });
-      document.addEventListener('touchmove', e => {
+
+      this.retina.addEventListener('touchmove', e => {
         let touch = e.touches[0];
         if (this.touchLine.activate) {
-          this.touchLine.move(touch.clientY);
-          let frontPercent = touch.clientY / this.height;
+          const offsetY = touch.pageY - e.target.offsetTop
+          this.touchLine.move(offsetY);
+          let frontPercent = offsetY / this.height;
           let endPercent = 1 - frontPercent;
           this.rubikResize(frontPercent, endPercent);
         } else {
@@ -132,10 +146,20 @@ class Main {
               this.rotateRubik();
             }
           }
+
+          if (!this.isRotating && this.startPoint && this.intersect) {
+            this.movePoint = this.intersect.point;
+            if (!this.movePoint.equals(this.startPoint)) {
+              this.rotateRubik();
+            }
+          }
         }
       });
-      document.addEventListener('touchend', e => {
+
+      this.retina.addEventListener('touchend', e => {
         this.touchLine.disable();
+        this.resetBtn.disable();
+        this.disorganizeBtn.disable();
       });
     } else {
       // not phone
@@ -207,8 +231,8 @@ class Main {
     let y = 0;
     if (isPhone()) {
       touch = event.touches[0];
-      x = touch.clientX;
-      y = touch.clientY;
+      x = touch.pageX - event.target.offsetLeft;
+      y = touch.pageY - event.target.offsetTop;
     } else {
       touch = event;
       x = touch.offsetX;

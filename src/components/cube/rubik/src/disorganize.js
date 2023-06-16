@@ -39,8 +39,8 @@ export default class ResetBtn {
     let x = 0;
     let y = 0;
     if (isPhone()) {
-      x = touch.clientX;
-      y = touch.clientY;
+      x = touch.touches[0].pageX - touch.target.offsetLeft;
+      y = touch.touches[0].pageY - touch.target.offsetTop;
     } else {
       x = touch.offsetX;
       y = touch.offsetY;
