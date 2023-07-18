@@ -1,5 +1,5 @@
-import React, { ChangeEvent, useState } from "react";
-import { Modal, Button, FormControl, FormLabel, Input, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, useDisclosure, useToast } from "@chakra-ui/react";
+import React, { ChangeEvent, useEffect, useState } from "react";
+import { Modal, Button, FormControl, FormLabel, Input, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, useDisclosure, useToast, Box, Select } from "@chakra-ui/react";
 import { ThreeStyleInfoItem } from "../../../types/data";
 
 type ComponentProps = {
@@ -20,6 +20,12 @@ function Model(props: ComponentProps) {
     encoder: "",
     detailed: ""
   });
+  const [customGroup, setCustomGroup] = useState<Array<string>>([]);
+
+  useEffect(() => {
+    const custom_group = window.localStorage.getItem("custom_group");
+    setCustomGroup(JSON.parse(custom_group ?? "[]"));
+  }, []);
 
   const handleChangeName = (e: ChangeEvent<HTMLInputElement>) => {
     setName(e.currentTarget.value);
@@ -27,6 +33,10 @@ function Model(props: ComponentProps) {
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>, key: string) => {
     setForm(preVal => ({ ...preVal, [key]: e.target.value }));
+  };
+
+  const handleSelectChange = (e: ChangeEvent<HTMLSelectElement>) => {
+    setName(e.currentTarget.value);
   };
 
   const handleSave = () => {
@@ -67,6 +77,19 @@ function Model(props: ComponentProps) {
       onClose();
       // component callback
       callback && callback(true);
+      //clean
+      setName("");
+      setForm({
+        commutator: "",
+        block: "",
+        step: "",
+        possible: "",
+        encoder: "",
+        detailed: ""
+      });
+
+      const custom_group = window.localStorage.getItem("custom_group");
+      setCustomGroup(JSON.parse(custom_group ?? "[]"));
     } else {
       toast({
         title: `分组名不能为空`,
@@ -91,6 +114,41 @@ function Model(props: ComponentProps) {
     });
   };
 
+  const handleDelete = () => {
+    if (customGroup.length === 0 || customGroup.every(group_name => group_name !== name)) {
+      toast({
+        title: `分组名不存在`,
+        position: "top-right",
+        status: "error",
+        duration: 2000,
+        isClosable: false,
+      });
+      return;
+    }
+    if (name === "") {
+      toast({
+        title: `请选择/输入将要删除分组名`,
+        position: "top-right",
+        status: "info",
+        duration: 2000,
+        isClosable: false,
+      });
+      return;
+    }
+
+    const id = customGroup.findIndex(item => item === name);
+    customGroup.splice(id, 1);
+    setCustomGroup(group => [...group]);
+    setName("");
+
+    window.localStorage.setItem("custom_group", JSON.stringify(customGroup));
+    //remove
+    window.localStorage.removeItem(name);
+    
+    onClose();
+    window.location.reload();
+  };
+
   return (
     <>
       <Button onClick={onOpen} size="xs" bg="blue.400" color="white"> + </Button>
@@ -111,7 +169,15 @@ function Model(props: ComponentProps) {
           <ModalBody pb={6}>
             <FormControl>
               <FormLabel>分组名</FormLabel>
-              <Input placeholder='' value={name} onChange={(e) => handleChangeName(e)} isRequired={true} />
+              <Box>
+                <Select mb={2} onChange={(e) => handleSelectChange(e)}>
+                  <option value={""}>选择分组</option>
+                  {
+                    customGroup.map((item, idx) => (<option value={item} key={idx}>{item}</option>))
+                  }
+                </Select>
+                <Input placeholder='输入分组名' value={name} onChange={(e) => handleChangeName(e)} isRequired={true} />
+              </Box>
             </FormControl>
 
             <FormControl>
@@ -145,10 +211,9 @@ function Model(props: ComponentProps) {
           </ModalBody>
 
           <ModalFooter>
-            <Button colorScheme='blue' mr={3} onClick={handleSave}>
-              Save
-            </Button>
+            <Button colorScheme='blue' mr={3} onClick={handleSave}>Save</Button>
             <Button onClick={() => handleCancel()}>Cancel</Button>
+            <Button mx={3} colorScheme="red" onClick={handleDelete}>Delete</Button>
           </ModalFooter>
         </ModalContent>
       </Modal>
