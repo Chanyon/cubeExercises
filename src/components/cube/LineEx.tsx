@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import { useHotkeys } from "react-hotkeys-hook";
 import { Box, Flex, Input, Textarea, Text } from "@chakra-ui/react";
 import { Main } from "./rubik/src/main.js";
@@ -69,9 +69,8 @@ function Cube() {
 
   //键盘快捷键
   {
-    useHotkeys("u,i,r,t,f,g,l,k,e,w,s,a,d,c,b,v,m,n", (event, handler) => {
+    useHotkeys("u,i,r,t,f,g,l,k,e,w,s,a,d,c,b,v,m,n", useThrottle((event: { type: string; }, handler: { keys: any[]; }) => {
       if (event.type === "keyup") { 
-        setTimeout(() => {
           switch (handler.keys?.pop()) {
             case "u":
               if (cube) {
@@ -166,9 +165,8 @@ function Cube() {
             default:
               break;
           }
-        }, 100);
       }
-    },{keyup: true});
+    }, 100),{keyup: true});
     //todo x,y,z,x',y',z'
   }
 
@@ -202,7 +200,7 @@ function Cube() {
   const handleInputChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const inputValue = e.target.value;
     setStepValue(inputValue);
-  }
+  };
 
   return (
     <Flex w="80%" h="860px" bg="#ffffff">
@@ -211,7 +209,7 @@ function Cube() {
         <Box><Text m="8px">角块编码：</Text><Input m="8px" /></Box>
         <Box><Text m="8px">棱块翻色：</Text><Input m="8px" /></Box>
         <Box><Text m="8px">角块翻色：</Text><Input m="8px" /></Box>
-        <Box><Text m="8px">还原步骤：</Text><Textarea rows={6} onChange={handleInputChange}  isInvalid size="lg" m="8px" placeholder=""></Textarea></Box>
+        <Box><Text m="8px">还原步骤：</Text><Textarea rows={6} onChange={useThrottle(handleInputChange, 100)}  isInvalid size="lg" m="8px" placeholder=""></Textarea></Box>
         <Box>
           <Text>快捷键：</Text>
           {
@@ -229,6 +227,31 @@ function Cube() {
 function myIncludes(step: string) {
   const allStep = ["R", "U", "D", "L", "F", "B", "T", "I", "C", "K", "G", "V", "E", "S", "M", "W", "A", "N"];
   return allStep.includes(step);
+}
+
+// function throttle(fn: Function, wait = 500) {
+//   let lastTime = 0;
+//   return  (...args: any) => {
+//     const now = +new Date();
+//     if (now - lastTime > wait) {
+//       lastTime = now;
+//       fn.apply(this, args);
+//     }
+//   }
+// }
+
+function useThrottle(fn: Function, delay: number, dep = []) {
+  const defaultData = { fn, pre: 0 };
+  const { current } = useRef(defaultData);
+  useEffect(() => { current.fn = fn }, [fn]);
+  return useCallback((...args: any[]) => {
+    const now = new Date().getTime();
+    const timeDiff = now - current.pre;
+    if (timeDiff > delay) {
+      current.pre = now;
+      current.fn(...args);
+    }
+  }, dep);
 }
 
 export { Cube }
